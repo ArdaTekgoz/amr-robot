@@ -12,6 +12,7 @@ Ardından **V1: temel otonom AMR** geliştirilecektir. Haritalama sırasında ro
 
 - Aktif görev: **AMR-01 - Görev tanımı ve sistem sınırları**; durum: devam ediyor.
 - ROS 2 daha önce Docker üzerinden kurulmuş; sürüm ve çalışır durum AMR-02'de doğrulanacak.
+- Harici laptop ve kablosuz robot bağlantısı başlangıç adayı; robot tarafı haberleşme birimi/protokol henüz seçilmedi.
 - STM32 Nucleo alınması planlanıyor; model seçilmedi. Motor, enkoder, sürücü ve sensör mevcut değil.
 - Test mekânı ve sayısal performans hedefleri henüz belirlenmedi.
 - Robot kodu ve deney sonucu henüz yok. Depo başlangıcı, uygulama başarısı değildir.
@@ -29,6 +30,7 @@ Arda kritik tasarım ve uygulamayı yapar; AI danışman olarak açıklama, ince
 - [Yol haritası ve kabul kapıları](docs/yol-haritasi.md)
 - [Gelişen proje raporu](docs/rapor.md)
 - [İlk oturum kaydı](docs/oturumlar/2026-10-12-AMR-01.md)
+- [13 Ekim oturum kaydı](docs/oturumlar/2026-10-13-AMR-01.md)
 - [Kanıt düzeni](evidence/README.md)
 - [Başlangıç raporu](amr-rapor.pdf)
 

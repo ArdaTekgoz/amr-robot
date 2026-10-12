@@ -2,6 +2,8 @@
 
 Tarih: 12 Ekim 2026. Tahmin: 4 saat. Gerçek süre: henüz kaydedilmedi. Durum: devam ediyor. Donanım gerekmez.
 
+Son oturum: [13 Ekim 2026](../oturumlar/2026-10-13-AMR-01.md). Bu görev birkaç oturuma yayıldı; tamamlanma tarihinden bağımsız olarak kanıtla değerlendirilecek.
+
 ## Bugünün öğrenme hedefi
 
 Bir robot fikrini kapsamı belirli, ölçülebilir ve doğrulanabilir gereksinimlere dönüştürmek. Bugün kod veya parça satın alımı gerekmiyor.
@@ -33,6 +35,8 @@ Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel 
 **İlk şema alındı:** Arda gamepad, ROS 2 PC, Nucleo, sol/sağ sürücü-motor-enkoder, dört mesafe sensörü ve güç kaynağını çizdi. [Şema incelemesinde](../sistem-mimarisi-inceleme.md) motor kontrol okları, sürücü-motor bağlantısı, güç dalları ve veri etiketleri için düzeltmeler kayıtlı. Gamepad mimarisi ve dört sensör henüz aday; haritalama sensörü ayrı seçim konusu. Şimdiki küçük uygulama bu şemanın revizyonudur.
 
 **V02 alındı:** Renk anahtarı, doğru STM32 → sürücü kontrol okları, ayrı PC komut/telemetri okları ve güç dalları eklendi. Arda komut kaybında durma sorumluluğunu STM32'ye verdi. Haritalama verisinin PC'ye yönlendirilmesi, sürücü-motor gücünün kırmızı gösterilmesi, mekanik enkoder ilişkisi, sol ön sensör veri oku ve besleme notları kalıyor. Kişisel açıklamada bağlantı bayrağından son geçerli komutun yaşına geçilecek; firmware henüz yazılmıyor.
+
+**V03 alındı / 13 Ekim:** Haritalama-PC veri yolu, sürücü-motor güç rengi ve sol ön sensör ölçüm rengi düzeltildi. Motor sürücü/enkoder temel rol açıklamaları alındı. Komut tamamlanmasıyla komutun alınma zamanı karıştığından kısa zaman çizelgesi alıştırması yapılacak. Laptopun harici olması ve robotla kablosuz haberleşme beklentisi kaydedildi; arayüz seçimi açık. Önce bu kavram netleşecek, sonra geçici performans değerlerine geçilecek.
 
 STM32, ROS 2 bilgisayarı, motor sürücü, motorlar, enkoderler, mesafe sensörü ve güç kaynağı için bloklar çiz. Her okun üzerine “ne taşınıyor?” yaz. Komut, geri besleme ve enerji için ayrı ok biçimi/renk seç.
 
@@ -77,7 +81,8 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [ ] Blok şemasında komut, geri besleme ve enerji yönleri/etiketleri incelemeden geçti.
 - [ ] Arda komut, geri besleme ve enerji akışını kendi sözleriyle açıklayabiliyor.
 - [x] Arda komut kaybında durma sorumluluğunun STM32'de olduğunu belirtti.
+- [x] Arda motor sürücü ile enkoderin temel rol farkını kendi sözleriyle açıkladı.
 - [ ] Arda son geçerli komut süresiyle timeout kontrolünü kendi sözleriyle açıklıyor.
 - [ ] Katkı, süre ve kanıt yolları oturum kaydında.
 
-Mevcut kanıt: evidence/AMR-01/alan-cizimi-v01.png, alan-cizimi-v02.png, blok-semasi-v01.png ve blok-semasi-v02.png. Blok şemasında kalan düzeltmeler, Arda'nın akış/timeout açıklamaları ve ilk sayısal performans hedefleri henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
+Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Laptop/robot sınır notları, timeout alıştırması ve ilk sayısal performans hedefleri henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.

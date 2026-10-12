@@ -1,10 +1,24 @@
 # AMR-01 - İlk sistem blok şeması incelemesi
 
-Tarih: 12 Ekim 2026. Şemayı çizen: Arda. İnceleme ve açıklama desteği: AI. Durum: V02 revizyonu alındı; kalan akış düzeltmeleri ve kişisel açıklamalar bekleniyor. Bu belge bitmiş tasarım veya devre bağlantı şeması değildir.
+Başlangıç: 12 Ekim 2026. Güncelleme: 13 Ekim 2026. Şemayı çizen: Arda. İnceleme ve açıklama desteği: AI. Durum: V03 revizyonu ve kişisel cevaplar alındı; timeout anlayışı ve harici laptop yerleşimi netleştiriliyor. Bu belge bitmiş tasarım veya devre bağlantı şeması değildir.
 
 ![Arda'nın ilk blok şeması](../evidence/AMR-01/blok-semasi-v01.png)
 
 ![Arda'nın revize blok şeması](../evidence/AMR-01/blok-semasi-v02.png)
+
+![Arda'nın üçüncü blok şeması](../evidence/AMR-01/blok-semasi-v03.png)
+
+## Güncel inceleme - V03 / 13 Ekim
+
+Haritalama verisi artık ROS 2 PC'ye yöneldi; sürücü-motor enerji okları kırmızı, sol ön sensör ölçümü mavi. Bu üç düzeltme alındı. Yeni kişisel cevaplar ve danışman değerlendirmesi [13 Ekim oturumunda](oturumlar/2026-10-13-AMR-01.md) ayrıntılı kayıtlıdır.
+
+Arda sürücünün enerji aktarımı ve enkoderin ölçüm görevini doğru ayırdı. Son komut zamanını komut/görev tamamlanınca güncelleme ve komut bitince durma cevapları ise hız referansı akışı için düzeltilmeli: zaman, STM32 geçerli ve güncel komutu kabul ettiği anda güncellenir. Yeni komut kesilirse üst düzey görev tamamlanmadan da timeout koşulu durma davranışını başlatır.
+
+Harici laptop + kablosuz robot bağlantısı kullanıcının beklediği yerleşim olarak kaydedildi ve başlangıç adayı olarak desteklendi. Kablosuz birim/arayüz henüz seçilmedi. Bu yerleşimde laptop kendi bataryası/adaptörüyle beslenir; şemadaki robot güç kaynağı → PC oku kaldırılmalı. PC-STM32 veri hattına “robot tarafı kablosuz haberleşme birimi - seçilecek” bloğu eklenmeli; haritalama verisinin de robottan laptopa aktarım ihtiyacı gösterilmeli. Nucleo'da kablosuz bağlantı olduğu varsayılmamalı.
+
+Motor-enkoder arasındaki ok mekanik dönüş diye etiketlenecek; uygun tipe göre enkoder besleme notu ve blok görevleri tamamlanacak. Şema baştan çizilmek zorunda değil; kısa notlar ve sınır kutuları yeterli. V1 sensörleri V0 için zorunlu donanım değildir.
+
+Şimdiki öğrenme adımı, 13 Ekim oturumundaki kısa zaman çizelgesi alıştırmasıdır. Timeout eşiği henüz proje için seçilmedi; şema veya açıklama fiziksel kabul yerine geçmez.
 
 ## V02 incelemesi ve Arda'nın açıklaması
 

@@ -20,4 +20,6 @@ Telefon/kumanda türü, haberleşme yöntemi, hız, yük, süre, timeout, fiziks
 
 Arda'nın [ilk blok şemasında](sistem-mimarisi-inceleme.md) gamepad → ROS 2 PC → STM32 manuel kontrol yolu önerildi. Bu aday mimaridir; bilgisayar yerleşimi ve bağlantı yöntemleri seçilmedi. Dört köşe mesafe sensörü V0'nun asgari kabulüne zorunlu özellik olarak eklenmedi.
 
+13 Ekim güncellemesi: Arda ROS 2 PC'nin kendi laptopu olmasını ve robotla kablosuz haberleşmesini beklediğini belirtti. Harici laptop başlangıç adayı olarak desteklendi; robot tarafı kablosuz birim ve protokol henüz seçilmedi. Laptop kendi beslemesiyle, robot bileşenleri robot güç dağıtımıyla beslenecek. Laptopun Docker/ağ çalışırlığı ve kablosuz veri yolu henüz doğrulanmadı.
+
 V0 dışı: harita, otonom rota, otomatik engelden kaçınma, QR, görüntü işleme, görev zamanlama ve üretilmiş üst modül. Modülerliğe yönelik mekanik paylar AMR-12/20'de planlanacak.

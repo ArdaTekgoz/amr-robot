@@ -1,6 +1,6 @@
 # AMR Robot - Gelişen Proje Raporu
 
-Yazar: Arda TEKGÖZ. Başlangıç: 12 Ekim 2026. Revizyon: 0.2. Belge türü: bitirme projesi düzeninde çalışma taslağı; kurumun biçim şartları henüz verilmedi.
+Yazar: Arda TEKGÖZ. Başlangıç: 12 Ekim 2026. Güncelleme: 13 Ekim 2026. Revizyon: 0.3. Belge türü: bitirme projesi düzeninde çalışma taslağı; kurumun biçim şartları henüz verilmedi.
 
 ## Özet
 
@@ -36,9 +36,13 @@ Kaynak kayıt biçimi: başlık, üretici/yazar, sürüm, URL, erişim tarihi, p
 
 Üst düzey rol ayrımı: STM32 PWM, enkoder okuma, sabit periyotlu hız kontrolü ve komut zaman aşımını; ROS 2 bilgisayarı odometri, TF, SLAM, konumlanma, navigasyon ve görev yönetimini üstlenecek. Motor sürücü, kontrol sinyalini motor gücüne aktaracak. Ayrıntılı arayüz henüz tasarlanmadı.
 
-Arda'nın V01 ve V02 [blok şemaları ve incelemesi](sistem-mimarisi-inceleme.md) kaydedildi. Gamepad/ROS 2 PC/STM32 yolu, iki sürücü-motor-enkoder grubu ve dört mesafe sensörü aday mimari olarak gösterildi. V02'de STM32-sürücü kontrol yönleri, PC komut/telemetri etiketleri ve renkli güç dağıtımı iyileştirildi; ayrı haritalama aygıtı eklendi. Haritalama verisinin PC'ye aktarımı, sürücü-motor enerji oku, motor-enkoder mekanik ilişkisinin etiketi ve bazı güç/veri notları hâlâ düzeltilmeli. Dört köşe sensörü haritalama sensörü yerine kabul edilmedi.
+Arda'nın V01, V02 ve V03 [blok şemaları ve incelemesi](sistem-mimarisi-inceleme.md) kaydedildi. Gamepad/ROS 2 PC/STM32 yolu, iki sürücü-motor-enkoder grubu ve dört mesafe sensörü aday mimari olarak gösterildi. V02'de STM32-sürücü kontrol yönleri, PC komut/telemetri etiketleri ve renkli güç dağıtımı iyileştirildi; ayrı haritalama aygıtı eklendi. V03'te haritalama verisi PC'ye yönlendirildi, sürücü-motor enerji oku ve sol ön sensör ölçüm rengi düzeltildi. Motor-enkoder mekanik etiketi, enkoder besleme ihtiyacı ve harici laptop yerleşimine uygun güç/haberleşme notları açık. Dört köşe sensörü haritalama sensörü yerine kabul edilmedi.
 
 Arda komut kesildiğinde durma sorumluluğunu STM32'ye verdi ve bağlantı bayrağına dayalı sözde kod önerdi. Danışman, bağlantı açık kalırken de komutun kesilebileceğini ve son geçerli komuttan beri geçen sürenin STM32'de izlenmesi gerektiğini açıkladı. Timeout eşiği, tekrar başlatma davranışı ve fiziksel duruş süresi henüz seçilmedi veya denenmedi. Yazılımsal komut timeout'u, fiziksel motor enerjisi kesme yolundan ayrı tutulur.
+
+13 Ekim'de Arda son komut zamanını komut tamamlanınca güncellemeyi ve komut bitince durmayı önerdi. Bu cevapta görev tamamlanması ile sürekli hız komutu akışı karışmıştır. Danışman, kabul edilen her geçerli/güncel hız komutunun alınma anında zamanın yenilenmesini; komutlar kesildiğinde görevin bitmesi beklenmeden süreyle duruşun tetiklenmesini açıkladı. Arda'nın zaman çizelgesi alıştırmasıyla yeni açıklaması henüz bekleniyor; öğrenme veya uygulama kabulü kapanmadı.
+
+Kullanıcı ROS 2 PC'nin kendi laptopu olması ve robotla kablosuz bağlantı kurması beklentisini belirtti. Harici laptop başlangıç adayı olarak desteklendi. Robot tarafında kablosuz haberleşme birimi/arayüz, Nucleo bağlantısı ve V1 sensör verisini laptopa taşıma yolu seçilecek. Laptop kendi bataryası/adaptörüyle, robot üstündeki bileşenler robot güç dağıtımıyla beslenecek. Bu yerleşim henüz donanım/protokol seçimi veya kablosuz test sonucu değildir.
 
 ### Karar kaydı
 
@@ -55,6 +59,7 @@ Arda komut kesildiğinde durma sorumluluğunu STM32'ye verdi ve bağlantı bayra
 | 2026-10-12 | V02'de istasyon/engel etiketleri; 250 mm merkez-yüzey açıklıkları | Arda'nın revize CAD çizimi | Düz duruşta nominal gövde açıklığı 50 mm; dönüş doğrulaması sonraki görevlerde |
 | 2026-10-12 | Gamepad/ROS 2 PC/STM32 yolu ve dört köşe sensörü aday mimari | Arda'nın ilk sistem blok şeması | Akış revizyonu ve sensör işlevlerinin ayrımı bekleniyor; parça seçimi değil |
 | 2026-10-12 | Komut kesilmesinde durma kararının STM32'de olması | Arda'nın kişisel açıklaması | Son geçerli komut yaşını izleme kuralı ve eşik henüz tamamlanmadı |
+| 2026-10-13 | Harici laptop ve kablosuz robot bağlantısı başlangıç adayı | Arda'nın kullanım beklentisi ve danışman açıklaması | Haberleşme birimi, protokol ve sensör veri yolu seçilecek |
 
 Sayısal hedeflerin gerekçeleri: **Arda yazacak**.
 
@@ -94,6 +99,8 @@ Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk harit
 Arda ayrıca V02 çiziminde BASE / ROBOT, TARGET ROBOT ve ENGEL etiketleri ile yol merkezi açıklıklarını ekledi. Bu çizim alan tanımı kanıtıdır. Dönüşlerde kare gövdenin kapladığı alanın kontrolü ve rotaların uygulanması henüz yapılmadı.
 
 Blok şemasının V02 revizyonunda renk anahtarı, kontrol yönleri, PC komut/telemetri etiketleri, güç dalları ve haritalama bloğunu ekledi. Komut kaybında STM32'nin durmayı yönetmesi gerektiğini kendi sözleriyle belirtti; zaman aşımının tespit yöntemi henüz revize edilecek.
+
+13 Ekim'de V03 revizyonunu sundu ve motor sürücü/enkoderin temel görevlerini kendi sözleriyle ayırdı. Son komut zamanı ve duruş anı açıklamalarındaki görev/komut ayrımı eksikliği ile laptop/kablosuz bağlantı sorusu [13 Ekim oturumunda](oturumlar/2026-10-13-AMR-01.md) gerçek yanıtlarıyla kaydedildi. Eksik öğrenme sonucu tamamlandı diye işaretlenmedi.
 
 AI: mevcut raporu inceledi; depo, yol haritası, çalışma sayfaları ve rapor iskeletini hazırladı. Bu hazırlık Arda'nın teknik uygulama kanıtı değildir.
 
