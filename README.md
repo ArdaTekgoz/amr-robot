@@ -4,7 +4,9 @@ Arda TEKGÖZ'ün öğrenme odaklı otonom mobil robot geliştirme projesi.
 
 Hedef: tek katlı bir iç mekânda diferansiyel sürüşlü robotla harita oluşturmak, kayıtlı haritada kullanıcının seçtiği erişilebilir konuma otonom gitmek ve başarıyı ölçmek.
 
-İlk sürümde haritalama sırasında robotu operatör gezdirir. Robot sensör verisinden haritayı oluşturur; kayıtlı haritada hedefe hareket otonomdur. Kendi kendine ortam keşfi sonraki sürümdür. A/B istasyonları tekrarlı kabul deneyinin hedefleridir.
+İlk fiziksel teslimat **V0: telefon veya kumandayla kontrol edilen mobil platform** olacaktır. Tek kontrol arayüzü yeterlidir; hangisinin kullanılacağı henüz seçilmedi. Haritalama ve otonom navigasyon V0 kabul koşulu değildir.
+
+Ardından **V1: temel otonom AMR** geliştirilecektir. Haritalama sırasında robotu operatör gezdirir. Robot sensör verisinden haritayı oluşturur; kayıtlı haritada hedefe hareket otonomdur. A/B veya base/target noktaları tekrarlı kabul deneyinde kullanılır. Modüler üst yapı, QR/görüntü işleme, periyodik görev ve kendi kendine keşif sonraki sürümlerdir. TEKNOFEST için altyapı oluşturma uzun vadeli amaçtır; yarışma şartnamesi henüz incelenmedi.
 
 ## Mevcut durum
 
@@ -21,7 +23,9 @@ Arda kritik tasarım ve uygulamayı yapar; AI danışman olarak açıklama, ince
 ## Belgeler
 
 - [Bugünkü görev](docs/gorevler/AMR-01.md)
-- [Gereksinim çalışma sayfası](docs/gereksinimler-v1.md)
+- [Kullanıcı vizyonu ve teslimat kapsamı](docs/vizyon-ve-kapsam.md)
+- [V0 manuel platform gereksinimleri](docs/gereksinimler-v0.md)
+- [V1 otonom AMR gereksinimleri](docs/gereksinimler-v1.md)
 - [Yol haritası ve kabul kapıları](docs/yol-haritasi.md)
 - [Gelişen proje raporu](docs/rapor.md)
 - [İlk oturum kaydı](docs/oturumlar/2026-10-12-AMR-01.md)
@@ -30,4 +34,4 @@ Arda kritik tasarım ve uygulamayı yapar; AI danışman olarak açıklama, ince
 
 STM32 motor kontrolü ve telemetriyi; ROS 2 bilgisayarı odometri, TF, haritalama, konumlanma, navigasyon ve görev yönetimini üstlenecek. Ayrıntılı arayüz ve parça seçimi ilgili görevlerde kesinleştirilecek.
 
-Simülasyon v1 AMR-11, fiziksel v1 AMR-24 ile kapanır. Başarısız denemeler de raporlanır.
+V0 ara teslimatı AMR-21 düzeyinde telefon/kumanda uçtan uca kontrolüyle kabul edilir; simülasyon V1 AMR-11, fiziksel V1 AMR-24 ile kapanır. Başarısız denemeler de raporlanır.

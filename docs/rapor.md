@@ -1,18 +1,20 @@
 # AMR Robot - Gelişen Proje Raporu
 
-Yazar: Arda TEKGÖZ. Başlangıç: 12 Ekim 2026. Revizyon: 0.1. Belge türü: bitirme projesi düzeninde çalışma taslağı; kurumun biçim şartları henüz verilmedi.
+Yazar: Arda TEKGÖZ. Başlangıç: 12 Ekim 2026. Revizyon: 0.2. Belge türü: bitirme projesi düzeninde çalışma taslağı; kurumun biçim şartları henüz verilmedi.
 
 ## Özet
 
 Bu proje, tek katlı bir iç mekânda diferansiyel sürüşlü mobil robotla harita oluşturmayı ve kayıtlı haritada kullanıcının seçtiği erişilebilir konuma otonom hareket etmeyi amaçlar. STM32 tabanlı tekerlek kontrolü ile ROS 2 tabanlı navigasyon katmanı ayrı geliştirilecek, sonra fiziksel sistemde birleştirilecektir. Simülasyon ve fiziksel robot kabulü ayrı deneylerle değerlendirilecektir. Henüz uygulama veya performans sonucu yoktur.
 
+İlk fiziksel ara teslimat V0, telefon veya kumandayla kontrol edilebilen mobil platformdur. Ardından temel otonom işlevler V1'de geliştirilecektir. Proje kişisel yetkinlik kazanımı ve ileride TEKNOFEST Sanayide Robotik Teknolojiler yarışmasına teknik altyapı oluşturma amacı taşır. Yarışma şartnamesi henüz değerlendirilmemiştir.
+
 ## 1. Problem, amaç ve kapsam
 
 İlk haritalamada operatör robotu gezdirecek; sensör verisinden harita oluşturulacaktır. Hedefe otonom hareket kayıtlı haritada gerçekleşecektir. Ortamı kendi kendine keşfetme sonraki sürüme bırakılmıştır. A/B istasyonları, seçilebilir hedef yeteneği için tekrarlı test noktalarıdır.
 
-Arda'nın kendi problem tanımı: **henüz yazılmadı**.
+Arda'nın kendi problem tanımı altı maddelik kullanım senaryosuyla sunuldu ve [vizyon/kapsam kaydında](vizyon-ve-kapsam.md) anlamı korunarak düzenlendi. Uzun vadede farklı düz zeminli mekânlarda yeniden haritalama, harita arayüzünde base/target seçimi, hedefte bekleme ve dönüş, kapalı yolda alternatif rota, QR ile görev zinciri ve modüler görüntü işleme işlevleri hedeflenir. İlk fiziksel teslimatın asgari kabulü manuel mobil platformdur.
 
-Kapsam ve ölçülebilir hedefler: [gereksinim sayfası](gereksinimler-v1.md). Gerçek test mekânı henüz seçilmedi; varsayımsal simülasyon boyutları fiziksel ölçüm diye sunulmayacaktır.
+Kapsam ve ölçülebilir hedefler: [V0 gereksinimleri](gereksinimler-v0.md) ve [V1 gereksinimleri](gereksinimler-v1.md). Gerçek test mekânı henüz seçilmedi; varsayımsal simülasyon boyutları fiziksel ölçüm diye sunulmayacaktır. “Her ortama uyum” bütün ortamların doğrulandığı anlamına gelmez; zemin/geometri/sensör koşulları kabul deneyinde sınırlandırılacaktır.
 
 ## 2. Başlangıç durumu ve yöntem
 
@@ -39,6 +41,10 @@ Arda'nın blok şeması ve üç akış açıklaması: **bekleniyor**.
 | 2026-10-12 | İlk harita operatör eşliğinde; otonom keşif sonraki sürüm | Kullanıcının açık seçimi; temel haritalama ve navigasyonu önce öğrenmek | Kapsam kararı |
 | 2026-10-12 | Seçilebilir erişilebilir hedef; A/B kabul deneyi | Kullanıcının kullanım amacı ve kaynak raporun tekrarlı deneyi | Kapsam kararı |
 | 2026-10-12 | Test alanı seçilmedi | Kullanıcının beyanı; ölçüm verisi yok | Açık konu |
+| 2026-10-12 | V0 manuel mobil platform ilk fiziksel ara teslimat | Arda'nın kullanım senaryosu, madde 6 | Kapsam kararı |
+| 2026-10-12 | V1 temel otonom hedef; QR, periyodik görev ve görüntü işleme sonraki sürüm | Arda'nın aşamalı geliştirme amacı; danışmanın kapsam düzenlemesi | Yol haritasına işlendi |
+| 2026-10-12 | Geçilebilir alternatif yol ile tamamen kapalı yol ayrı deneyler | Yeniden planlamanın hedefe erişimi garanti etmemesi | Sayısal sınırlar bekleniyor |
+| 2026-10-12 | Telefon veya kumandadan tek kontrol arayüzü V0 için yeterli | Arda'nın asgari prototip tanımı | Arayüz seçimi açık |
 
 Sayısal hedeflerin gerekçeleri: **Arda yazacak**.
 
@@ -63,7 +69,7 @@ Her bölümde tasarım gerekçesi, kendi geliştirilen parça, kullanılan hazı
 
 ## 7. Tartışma, sınırlamalar ve gelecek çalışmalar
 
-Başlangıç sınırlamaları: donanım, test alanı ve sayısal hedefler eksik. Simülasyonun fiziksel sisteme aktarımı henüz incelenmedi. Otonom keşif ayrı sonraki kapsamdır; ek süre tahmini yapılmadı.
+Başlangıç sınırlamaları: donanım, test alanı, ilk kontrol arayüzü ve sayısal hedefler eksik. Simülasyonun fiziksel sisteme aktarımı henüz incelenmedi. Otonom keşif, QR, periyodik görev ve üst modül ayrı sonraki kapsamlardır; ek süre tahmini yapılmadı. Yarışma şartlarına uygunluk değerlendirilmedi.
 
 Sonuçlara dayalı değerlendirme: deneylerden sonra yazılacak.
 
@@ -73,7 +79,7 @@ Henüz proje sonucu yoktur. Bu bölüm ancak ölçülmüş sonuçlar ve gereksin
 
 ## 9. Kişisel katkı ve öğrenme
 
-Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk haritalama yöntemini açıkladı. Teknik çizim, sayısal gereksinim ve uygulama henüz sunulmadı.
+Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk haritalama yöntemini açıkladı; altı maddelik senaryosunda kişisel gelişim/yarışma altyapısı amacını, modüler robot vizyonunu ve manuel ilk prototip beklentisini belirledi. Teknik çizim, sayısal gereksinim ve uygulama henüz sunulmadı.
 
 AI: mevcut raporu inceledi; depo, yol haritası, çalışma sayfaları ve rapor iskeletini hazırladı. Bu hazırlık Arda'nın teknik uygulama kanıtı değildir.
 

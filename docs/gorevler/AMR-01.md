@@ -6,9 +6,11 @@ Tarih: 12 Ekim 2026. Tahmin: 4 saat. Gerçek süre: henüz kaydedilmedi. Durum: 
 
 Bir robot fikrini kapsamı belirli, ölçülebilir ve doğrulanabilir gereksinimlere dönüştürmek. Bugün kod veya parça satın alımı gerekmiyor.
 
-## 1. Kullanım senaryosu - önce bunu Arda yazacak (25 dakika öneri)
+## 1. Kullanım senaryosu - Arda'nın yanıtı alındı (25 dakika ilk öneri)
 
 Kendi sözlerinle 5-7 cümle yaz: Robot ne yapacak, harita nasıl oluşacak, hedefi kim verecek, hedefe varınca ne olacak, yol kapalıysa ne bildirecek, hangi işleri v1'de yapmayacak?
+
+Arda altı maddelik yanıtını verdi. [Senaryo ve kapsam](../vizyon-ve-kapsam.md) rapora işlendi. İlk fiziksel prototip V0 manuel platform; otonom hedefler V1 ve sonraki sürümlere ayrıldı. Bu alt adımın çıktısı var; AMR-01 bütünü henüz tamamlanmadı.
 
 **Neden:** Kullanım senaryosu belirsizse başarılı çalışan bir yazılım bile ihtiyacını karşılamayabilir.
 
@@ -17,6 +19,8 @@ Kendi sözlerinle 5-7 cümle yaz: Robot ne yapacak, harita nasıl oluşacak, hed
 ## 2. Alan ve istasyon çizimi (35 dakika öneri)
 
 Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel ve iki hedef noktası çiz. Eksen yönünü, metre cinsinden boyutları, en dar geçişi ve başlangıç noktasını işaretle. Ölçü yoksa varsayım yaz. A/B bu çizimde kabul deneyi için kullanılacak.
+
+Şimdiki küçük görev: düz zeminli hayalî bir test alanı çiz; yaklaşık boyutlarını, robot başlangıcını, operatörün yerini, base ve target noktalarını, bir engeli ve çevresindeki boşluğu işaretle. “Varsayımsal test alanı” yaz. V0'da engeli operatör görecek ve yönetecek; çizimdeki otonom alternatif rota davranışı V1'e aittir. Boyutlar satın alma kararı değildir.
 
 **Neden:** Robot boyutu ve geçiş genişliği, hangi hedeflerin erişilebilir olduğunu belirler. İlk çizim gerçek test alanı haritası değildir.
 
@@ -31,6 +35,8 @@ Kendine sor: Hedef koordinatı ile motor sürme komutu aynı şey mi? Enkoder ba
 ## 4. Gereksinimleri ölçülebilir yaz (50 dakika öneri)
 
 [Çalışma sayfasını](../gereksinimler-v1.md) doldur. Hız, yük, çalışma süresi, konum/açı toleransı, başarı eşiği ve duruş davranışı için geçici hedef + gerekçe + ölçüm yöntemi yaz. Parça alımına bağlanan değerler AMR-12'de tekrar değerlendirilecek.
+
+Önce [V0 çalışma sayfasındaki](../gereksinimler-v0.md) manuel kontrol hedeflerini seç; V1 konumlanma ve navigasyon hedeflerini ayrı tut. Telefon veya kumandadan hangisinin ilk kontrol arayüzü olacağı henüz açık bir karardır.
 
 Yazım kalıbı: “Robot, [tanımlı koşulda], [davranışı], [birim ve eşik] ile gerçekleştirmelidir; [deney yöntemi] ile doğrulanacaktır.”
 
@@ -52,7 +58,8 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 
 ## Tamamlanma kontrolü
 
-- [ ] Kısa kapsamda v1 içi ve dışı açık.
+- [x] Kullanım senaryosu ve V0/V1/sonraki sürüm sınırları yazılı.
+- [ ] Kısa kapsam ve sayısal hedefler son incelemeden geçti.
 - [ ] Alan/istasyon çizimi var; varsayım ve ölçüm ayrı.
 - [ ] İlk sayısal hedefler, birimler, gerekçeler ve ölçüm yöntemleri kayıtlı.
 - [ ] Simülasyon ve fiziksel kabul için başarı eşikleri açık.

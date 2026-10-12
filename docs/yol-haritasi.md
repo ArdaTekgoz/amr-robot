@@ -2,11 +2,17 @@
 
 Kaynak: kökteki amr-rapor.pdf, 12 Ekim 2026. Bu belge kaynak planı takip eder; aşağıdaki görevler uygulama kanıtı değildir.
 
-Ana kapsam 204 saat; haftada 6 saat ile yaklaşık 34 çalışma haftası, %25 planlama payıyla yaklaşık 43 hafta. Tedarik ve diğer beklemeler dahil değildir. Sonraki sürümler ayrıca 58 saattir. Tahminler teslim tarihi taahhüdü değildir.
+Kaynak planın ana kapsamı 204 saat; haftada 6 saat ile yaklaşık 34 çalışma haftası, %25 planlama payıyla yaklaşık 43 hafta. Tedarik ve diğer beklemeler dahil değildir. Kaynak plandaki sonraki sürümler ayrıca 58 saattir. Telefon/kumanda arayüzü, QR ve diğer yeni ayrıntıların ek süresi henüz değerlendirilmedi; aşağıdaki saatler kaynak tahminleridir. Tahminler teslim tarihi taahhüdü değildir.
 
 ## Kullanıcıyla netleşen kapsam
 
 12 Ekim 2026: İlk harita operatörün robotu gezdirmesiyle oluşturulacak. Kayıtlı haritada kullanıcının seçtiği erişilebilir hedefe otonom navigasyon geliştirilecek. A/B istasyonları sabit kabul deneyi olarak kullanılacak. Otonom keşif sonraki sürüme bırakıldı; kaynak rapordaki 29 göreve dahil değil, ayrıca tahmin edilecek.
+
+Arda'nın altı maddelik senaryosuyla ilk fiziksel teslimat **V0 manuel mobil platform** olarak netleşti. Otonom ana kapsam **V1** olarak korunur. [Teslimat sınırları](vizyon-ve-kapsam.md) ve [V0 gereksinimleri](gereksinimler-v0.md) ayrı kaydedildi. Modüler üst yapı ve yarışma altyapısı uzun vadeli amaçtır.
+
+V0 için gömülü kontrol/entegrasyon kolu: 01 → 12 → 13 → 14 → 15 → 16 → 17 → 18 → 19 → 20 → 21. Ayrıca 18 için 03; 19 için 04 gereklidir. Böylece V0'dan önce temel ROS ve kinematik öğrenilir; 08–11 haritalama/navigasyon görevlerinin V0'dan önce tamamlanması gerekmez. V0 kontrol arayüzü AMR-18/21 içinde ayrıca tasarlanıp uçtan uca doğrulanacaktır.
+
+AMR-20'de V0 şasi/güç ve gereken kontrol bağlantısı önce kurulabilir. Kaynak plandaki mesafe sensörü ve otonom kullanım için bilgisayar kararının kesinleşmesi, fiziksel haritalama AMR-22 öncesine alınır. Bu parçalar V0'nun asgari satın alma koşulu değildir. V0'daki bilgisayar/bağlantı ihtiyacı seçilen kontrol mimarisine göre kararlaştırılacaktır.
 
 ## Görevler ve ön koşullar
 
@@ -50,6 +56,7 @@ Ana kapsam 204 saat; haftada 6 saat ile yaklaşık 34 çalışma haftası, %25 p
 - AMR-12: İlk tezgâh için veri sayfası ve elektriksel/mekanik uyumla gerekçeli bütçe. Tam robot alımı ikinci dilimdir.
 - AMR-11: On sabit simülasyon denemesinin tüm sonuçları ve AMR-01'de seçilen başarı eşiği. İptal ve ulaşılamaz hedef davranışı da incelenir.
 - AMR-19: Gerçek kontrol, timeout, haberleşme ve odometri doğrulanmış olmalı; ardından fiziksel entegrasyon.
+- V0 / AMR-21: Fiziksel şasi/güç ve kalibrasyon; seçilen telefon veya kumandayla uçtan uca komut, durma ve bağlantı kaybı deneyleri. Otonom navigasyon bu ara teslimat için gerekmez.
 - AMR-24: On fiziksel görev ve bütün v1 gereksinimlerinin geçti/kaldı değerlendirmesi; temiz açılıştan tekrarlanabilir demo.
 
 Simülasyon sonucu fiziksel sonuç yerine yazılmaz. Kabul eşiği deney sonucunu gördükten sonra başarıyı sağlamak için değiştirilmez; gerekçeli revizyon ayrı kaydedilir.

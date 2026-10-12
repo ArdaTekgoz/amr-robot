@@ -1,12 +1,12 @@
 # AMR v1 - Gereksinim çalışma sayfası
 
-Revizyon: 0.1 taslak | 12 Ekim 2026 | Durum: Arda'nın kararları ve sayısal hedefleri bekleniyor.
+Revizyon: 0.2 taslak | 12 Ekim 2026 | Durum: kullanım senaryosu kaydedildi; sayısal hedefler bekleniyor. İlk fiziksel ara teslimat için [V0 gereksinimleri](gereksinimler-v0.md) kullanılır.
 
 ## Amaç ve kapsam
 
-Tek robot, tek katlı iç mekân, diferansiyel sürüş. Operatör robotu gezdirirken harita oluşturulur; kayıtlı haritada kullanıcının seçtiği erişilebilir hedefe otonom navigasyon yapılır. A/B noktaları tekrarlı kabul senaryosudur. Görev durumu ve hatalar bildirilir.
+Tek robot, tek katlı ve düz zeminli iç mekân, diferansiyel sürüş. Operatör robotu gezdirirken harita oluşturulur; kayıtlı haritada kullanıcının seçtiği erişilebilir hedefe otonom navigasyon yapılır. A/B veya base/target noktaları tekrarlı kabul senaryosudur. Görev durumu ve hatalar bildirilir. Farklı mekânlarda yeniden haritalama uzun vadeli kullanım amacıdır; ilk doğrulama tanımlı bir ortamda yapılır.
 
-V1 dışı: otonom keşif, merdiven, dış mekân, otomatik yükleme/boşaltma, robot kolu/ArmPilot bütünleşmesi, filo yönetimi, endüstriyel sertifikasyon, özel PCB, kamera/YOLO/Ollama. Bunlar v1'in ölçülen başarı iddiasına dahil değildir.
+V1 dışı: otonom keşif, QR ile görev zinciri, görüntüyle hedef tanıma, periyodik görev zamanlama, üretilmiş modüler üst yapı, merdiven, dış mekân, otomatik yükleme/boşaltma, robot kolu/ArmPilot bütünleşmesi, filo yönetimi, endüstriyel sertifikasyon, özel PCB, kamera/YOLO/Ollama. Bunlar v1'in ölçülen başarı iddiasına dahil değildir.
 
 ## Çalışma ortamı
 
@@ -28,6 +28,8 @@ Boş alanlar eksik karardır; varsayılan başarı değeri değildir. SIM ve Fİ
 | R-08 | SIM başarı: ... /10; FİZ başarı: ... /10 | Deneyden önce seçilecek | On sabit görev; başarısızlar dahil tam kayıt |
 | R-09 | Geçerli komut kesilince timeout: ... ms; fiziksel duruş sınırı: ... s | Geçici değer seçilecek | Son geçerli mesaj, sıfır referans ve gerçek duruş zamanlarını ayrı ölç |
 | R-10 | İptalde durma; ulaşılamaz hedefte tanımlı hata bildirimi | Süre/koşul seçilecek | SIM/FİZ: iptal ve kapalı yol senaryosu |
+| R-11 | Algılanan engelde geçilebilir alternatif rota varsa yeniden planlama; rota yoksa sınırlı deneme sonrası durum bildirimi | Süre/yeniden deneme/sensör sınırları seçilecek | SIM/FİZ: alternatif yol açık ve bütün yollar kapalı deneylerini ayrı uygula |
+| R-12 | Harita arayüzünden base/target seçme; açık başlatmayla target'a gitme, ... s bekleme ve base'e dönme | Temel görev dizisi hedefi; ayrıntı seçilecek | SIM/FİZ: gidiş, bekleme, dönüş ve iptal kayıtları; otomatik periyodik başlatma dahil değil |
 
 R-08'de “başarı” tanımı: doğru hedef + R-07 toleransı + tanımlı süre sınırı (... s) + iptal/hata gerektirmeyen normal tamamlanma. Süre ve deney koşulları Arda tarafından yazılacak. R-09 timeout ile mekanik duruş süresi aynı büyüklük değildir.
 
