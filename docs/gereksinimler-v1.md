@@ -10,7 +10,7 @@ V1 dışı: otonom keşif, QR ile görev zinciri, görüntüyle hedef tanıma, p
 
 ## Çalışma ortamı
 
-Gerçek mekân: seçilmedi. İlk varsayımsal alan 2 × 2 m, robot gövdesi 40 × 40 cm ve zemin düz kabul edildi. Arda iki alternatif rota çizdi; [alan kaydı](test-alani.md) mevcut. En dar geçiş, açık istasyon etiketleri, istasyon mesafesi ve operatör yeri henüz netleştirilecek. Bu değerler donanım boyutlandırma kararı veya fiziksel ölçüm değildir.
+Gerçek mekân: seçilmedi. İlk varsayımsal alan 2 × 2 m, robot gövdesi 40 × 40 cm ve zemin düz kabul edildi. Arda iki alternatif rota çizdi; V02'de istasyon/engel etiketleri ve yol merkezi-duvar/engel açıklıkları 250 mm olarak gösterildi. Eksenlere paralel gövdede nominal açıklık 50 mm; dönüşte yeterlilik henüz doğrulanmadı. [Alan kaydı](test-alani.md) mevcut. Operatör yeri ve merkez yolu notu netleştirilecek. Bu değerler donanım boyutlandırma kararı veya fiziksel ölçüm değildir.
 
 ## Gereksinimler ve doğrulama
 

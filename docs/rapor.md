@@ -46,6 +46,7 @@ Arda'nın blok şeması ve üç akış açıklaması: **bekleniyor**.
 | 2026-10-12 | Geçilebilir alternatif yol ile tamamen kapalı yol ayrı deneyler | Yeniden planlamanın hedefe erişimi garanti etmemesi | Sayısal sınırlar bekleniyor |
 | 2026-10-12 | Telefon veya kumandadan tek kontrol arayüzü V0 için yeterli | Arda'nın asgari prototip tanımı | Arayüz seçimi açık |
 | 2026-10-12 | İlk varsayımsal alan 2 × 2 m; robot 40 × 40 cm; iki rota fikri | Arda'nın CAD çizimi ve açıklaması | Tasarım varsayımı; geçilebilirlik doğrulanmadı |
+| 2026-10-12 | V02'de istasyon/engel etiketleri; 250 mm merkez-yüzey açıklıkları | Arda'nın revize CAD çizimi | Düz duruşta nominal gövde açıklığı 50 mm; dönüş doğrulaması sonraki görevlerde |
 
 Sayısal hedeflerin gerekçeleri: **Arda yazacak**.
 
@@ -81,6 +82,8 @@ Henüz proje sonucu yoktur. Bu bölüm ancak ölçülmüş sonuçlar ve gereksin
 ## 9. Kişisel katkı ve öğrenme
 
 Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk haritalama yöntemini açıkladı; altı maddelik senaryosunda kişisel gelişim/yarışma altyapısı amacını, modüler robot vizyonunu ve manuel ilk prototip beklentisini belirledi. 2 × 2 m alan ve 40 × 40 cm robot varsayımıyla iki alternatif rota içeren ilk CAD çizimini oluşturdu. Sistem blok şeması, sayısal performans gereksinimleri ve robot uygulaması henüz sunulmadı.
+
+Arda ayrıca V02 çiziminde BASE / ROBOT, TARGET ROBOT ve ENGEL etiketleri ile yol merkezi açıklıklarını ekledi. Bu çizim alan tanımı kanıtıdır. Dönüşlerde kare gövdenin kapladığı alanın kontrolü ve rotaların uygulanması henüz yapılmadı.
 
 AI: mevcut raporu inceledi; depo, yol haritası, çalışma sayfaları ve rapor iskeletini hazırladı. Bu hazırlık Arda'nın teknik uygulama kanıtı değildir.
 

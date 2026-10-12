@@ -18,7 +18,7 @@ Arda altı maddelik yanıtını verdi. [Senaryo ve kapsam](../vizyon-ve-kapsam.m
 
 ## 2. Alan ve istasyon çizimi (35 dakika öneri)
 
-**Çizim alındı:** Arda 2 × 2 m kare alan, varsayımsal 40 × 40 cm robot ve iki alternatif rota çizdi. [İlk çizim ve inceleme](../test-alani.md) kayıtlıdır. Alan çizimi kanıtı var; base/target/engel etiketleri, en dar geçiş ve operatör yeri son düzeltme olarak bekleniyor. Rotaların fiziksel geçilebilirliği henüz doğrulanmadı.
+**Çizim güncellendi:** Arda 2 × 2 m kare alan, varsayımsal 40 × 40 cm robot ve iki alternatif rota çizdi. V02'de base/target/engel etiketleri ve 250 mm yol merkezi açıklıkları var. [Çizim ve inceleme](../test-alani.md) kayıtlıdır. Eksenlere paralel sürüşte 50 mm nominal gövde açıklığı hesaplandı; dönüşte geçilebilirlik henüz doğrulanmadı. Alan tanımı bu görevde ilerlemek için yeterli; operatör yeri ve merkez yolu notu küçük belge eksikleridir.
 
 Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel ve iki hedef noktası çiz. Eksen yönünü, metre cinsinden boyutları, en dar geçişi ve başlangıç noktasını işaretle. Ölçü yoksa varsayım yaz. A/B bu çizimde kabul deneyi için kullanılacak.
 
@@ -27,6 +27,8 @@ Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel 
 **Neden:** Robot boyutu ve geçiş genişliği, hangi hedeflerin erişilebilir olduğunu belirler. İlk çizim gerçek test alanı haritası değildir.
 
 ## 3. Sistem sınırı ve sorumluluklar (45 dakika öneri)
+
+**Şu anki uygulama adımı budur.** Alan çizimini tekrar tekrar ayrıntılandırmak yerine sistem blok şemasına geçilecek. Telefon/kumanda arayüzünü de bloklara ekle. Henüz model, pin, gerilim veya haberleşme teknolojisi seçmek gerekmiyor.
 
 STM32, ROS 2 bilgisayarı, motor sürücü, motorlar, enkoderler, mesafe sensörü ve güç kaynağı için bloklar çiz. Her okun üzerine “ne taşınıyor?” yaz. Komut, geri besleme ve enerji için ayrı ok biçimi/renk seç.
 
@@ -63,11 +65,12 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [x] Kullanım senaryosu ve V0/V1/sonraki sürüm sınırları yazılı.
 - [ ] Kısa kapsam ve sayısal hedefler son incelemeden geçti.
 - [x] Alan çizimi var; 2 × 2 m alan ve 40 × 40 cm robot varsayım olarak kayıtlı.
-- [ ] Base/target/engel etiketleri, en dar geçiş ve operatör yeri net.
+- [x] Base/target/engel etiketleri ve gösterilen dar geçiş açıklıkları kayıtlı.
+- [ ] Operatör yeri ve kesikli hatların merkez yolu olduğu notu net.
 - [ ] İlk sayısal hedefler, birimler, gerekçeler ve ölçüm yöntemleri kayıtlı.
 - [ ] Simülasyon ve fiziksel kabul için başarı eşikleri açık.
 - [ ] Arda'nın kendi blok şeması var.
 - [ ] Arda komut, geri besleme ve enerji akışını kendi sözleriyle açıklayabiliyor.
 - [ ] Katkı, süre ve kanıt yolları oturum kaydında.
 
-Mevcut kanıt: evidence/AMR-01/alan-cizimi-v01.png. Arda'nın blok şeması ve ilk sayısal performans hedefleri henüz bekleniyor. AMR-01 tamamlanmadı; çizim bu görevin bir uygulama çıktısı, rapor ise bunun kaydıdır.
+Mevcut kanıt: evidence/AMR-01/alan-cizimi-v01.png ve alan-cizimi-v02.png. Arda'nın blok şeması ve ilk sayısal performans hedefleri henüz bekleniyor. AMR-01 tamamlanmadı; çizim bu görevin bir uygulama çıktısı, rapor ise bunun kaydıdır.

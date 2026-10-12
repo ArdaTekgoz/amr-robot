@@ -2,7 +2,9 @@
 
 Tarih: 12 Ekim 2026. Kaynak: Arda'nın CAD çizimi ve açıklaması. Bu bir tasarım varsayımıdır; fiziksel ölçüm veya navigasyon deneyi değildir.
 
-![Arda'nın ilk alan çizimi](../evidence/AMR-01/alan-cizimi-v01.png)
+![Arda'nın güncel alan çizimi](../evidence/AMR-01/alan-cizimi-v02.png)
+
+İlk çizim [v01](../evidence/AMR-01/alan-cizimi-v01.png) olarak korundu; güncel inceleme v02'ye aittir. Alan tanımı AMR-01'in sistem sorumlulukları adımına geçmek için yeterlidir. Rota uygulama kabulü yapılmadı.
 
 | Özellik | Değer / durum |
 | --- | --- |
@@ -10,23 +12,25 @@ Tarih: 12 Ekim 2026. Kaynak: Arda'nın CAD çizimi ve açıklaması. Bu bir tasa
 | Robot gövde izdüşümü | 0,40 × 0,40 m; Arda'nın geçici boyut varsayımı |
 | Zemin | Düz zemin; önceki kullanım senaryosuyla uyumlu varsayım |
 | Rota fikri | İki alternatif yol; çizimde iki kesikli hat |
-| Base/target/engel kimliği | Açık metin etiketleriyle netleştirilecek |
-| Engel boyutu ve konumu | Çizimde orta kare ve 300 mm ofsetler var; engel ölçüleri ayrıca belirtilecek |
-| En dar geçiş ve operatör yeri | Henüz açıkça belirtilmedi |
+| Base/target/engel kimliği | V02'de BASE / ROBOT, TARGET ROBOT ve ENGEL etiketleri var |
+| Gösterilen yol açıklıkları | Üst, sol ve sağda duvar-yol merkezi 250 mm; yol merkezi-engel yüzeyi 250 mm; bu kesitlerde toplam boşluk 500 mm |
+| Başlangıç/hedef gövde açıklığı | Base'te üst/sol; target'ta sağ duvara gövde açıklığı 50 mm gösterildi |
+| Operatör yeri | Henüz belirtilmedi; alan dışı konum ayrıca not edilecek |
 
 ## İnceleme notu
 
-Çizimdeki 2000 ve 400 ölçüleri, Arda'nın 2 m alan / 40 cm robot açıklamasıyla uyumludur. İki alternatif rota fikri kaydedildi; iki rotanın ortak başlangıç ve hedefi ile robot merkezini temsil edip etmediği netleştirilecek.
+Çizimdeki 2000 ve 400 ölçüleri, Arda'nın 2 m alan / 40 cm robot açıklamasıyla uyumludur. İki alternatif rota fikri ve istasyon/engel etiketleri kaydedildi. Kesikli hatlar incelemede robot merkezi yolu olarak yorumlandı; Arda'nın açık notuyla teyit edilecek. Çizimde rotaların base/target merkezlerine kısa bağlantıları tam gösterilmemiştir; bu ayrıntı sonraki rota modellemesinde tamamlanabilir.
 
-Bir çizginin engeli kesmemesi, 40 cm genişliğindeki gövdenin geçebildiğini tek başına göstermez. Eksenlere paralel kare gövdenin merkezinden kenara 20 cm vardır; ilave açıklık ayrıca seçilecektir. Dönüşte gövdenin kapladığı alan da hesaba katılır. Çizimdeki 300 mm ölçülerin koridor genişliği olduğu varsayılmadı. Gerçek bir koridor 30 cm genişliğinde olsaydı, 40 cm kare robot bu aralıktan geçemezdi.
+Bir çizginin engeli kesmemesi, 40 cm genişliğindeki gövdenin her yönelimde geçebildiğini tek başına göstermez. Eksenlere paralel kare gövdenin merkezinden kenara 200 mm vardır. Gösterilen 250 mm merkez-yüzey uzaklığı, bu duruşta 250 - 200 = 50 mm nominal gövde açıklığı verir. Bu değer ölçülmüş güvenli çalışma mesafesi değildir.
+
+Yerinde dönen kare gövde için merkezden köşeye uzaklık yaklaşık 283 mm'dir (200 × √2). Duvara 250 mm uzak bir merkez etrafında tam yönelim taraması yeterli açıklığı sağlamaz. Özellikle duvar yakınındaki rota köşeleri, dönüş modeli ve seçilecek ek açıklıkla sonraki görevlerde gözden geçirilecek. İki rotanın çarpışmasız olduğu henüz doğrulanmadı.
 
 Bu aşamada ayrıntılı rota doğrulaması yapılmayacak. AMR-01 çıktısı, alan ve geçiş varsayımlarını açık yazmaktır; kinematik/model ve navigasyon incelemesi sonraki görevlerde yapılacaktır.
 
-## Küçük çizim düzeltmesi
+## Kalan küçük notlar ve sonraki adım
 
-- “Varsayımsal test alanı - ölçüler mm” notunu ekle.
-- Robot/Base, Target ve Engel etiketlerini açık yaz; operatörün yerini göster.
-- İki rotanın aynı robot merkezinden başlayıp aynı hedef merkezine ulaştığını göster; merkez yoluysa bunu not et.
-- En dar gerçek geçişi yüzeyden yüzeye ölçülendir; 300 mm ofset ile geçiş genişliğini ayır.
+- “Varsayımsal test alanı - ölçüler mm; kesikli hatlar robot merkezi yolu” notunu teyit ederek ekle.
+- Operatörün alan dışındaki konumunu not et.
+- Base/target bağlantıları ve dönüşte gövde taraması, sonraki model/rota incelemesinde ele alınacak; bugün ayrıntılı rota optimizasyonu gerekmiyor.
 
-Ardından AMR-01'in sistem sorumlulukları ve üç akış blok şeması adımına geçilecek. Çizim, robotun iki rotayı başarıyla izlediğine dair kanıt değildir.
+Şimdiki uygulama AMR-01'in sistem sorumlulukları ve üç akış blok şemasıdır. Çizim, robotun iki rotayı başarıyla izlediğine dair kanıt değildir.
