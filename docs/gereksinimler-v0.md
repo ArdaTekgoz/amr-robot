@@ -10,13 +10,13 @@ Revizyon: 0.2 taslak | Güncelleme: 13 Ekim 2026 | Durum: ilk hız/yük/süre he
 | --- | --- | --- |
 | V0-01 | Seçilecek tek arayüzden ileri, geri, sağ/sol dönüş ve durma komutları | Tanımlı test alanında her komut için beklenen/gerçek hareket kaydı |
 | V0-02 | Komut bırakılınca belirlenen davranışla durma; başlangıç/reset sonrasında istemsiz hareket olmaması | Başlangıç, reset ve komut bırakma deneyi; davranış/süre seçilecek |
-| V0-03 | Geçerli komut kaybında STM32'nin belirlenen timeout ile sıfır referansa geçmesi | Bağlantı kesme: son geçerli mesaj, sıfır referans ve gerçek duruş sürelerini ayrı ölç |
+| V0-03 | Başlangıç danışman varsayımı: güncel komut 20 Hz; son geçerli komuttan ≥250 ms sonra ilk STM32 kontrol çevriminde sıfır tekerlek referansları | Bağlantı kesme: son geçerli mesaj, eşik, kontrol çevrimi gecikmesi, sıfır referans ve gerçek duruş sürelerini ayrı ölç. AMR-17/18'de doğrulanacak/revize edilecek |
 | V0-04 | Nominal seyir 0,25–0,35 m/s; boş yükte geniş alanda azami 0,45 m/s; açısal sınır henüz seçilmedi | Referans/ölçülen hız logu. Nominal bant ve boş yük azami koşulunu ayrı dene; dar alan hızını duruş/açıklık ölçümlerine göre sınırla |
 | V0-05 | 5 kg hedef faydalı yükle, nominal hız bandında tanımlı gidiş-dönüş çevrimi ve ilgili robot sensörleri açıkken en az 30 dakika | Yük, rota, hareket/bekleme oranı, elektronik konfigürasyonu ve robot batarya enerji/süre kaydı. Çevrim ayrıntısı henüz yazılacak |
 | V0-06 | Motor enerjisini fiziksel olarak kesebilme; kablo/güç düzeninin doğrulanması | AMR-20 güç kontrolü ve enerjiyi kesme deneyi |
 | V0-07 | Ölçülen tekerlek kontrolü ve odometri kalibrasyonu | AMR-19 ve AMR-21 sonuçları; otonom navigasyon gerektirmez |
 
-Başlangıç kontrol tercihi gamepad'dir. Modeli/haberleşme yöntemi, açısal hız, timeout, fiziksel duruş eşiği ve tekrar sayısı henüz seçilmedi. İlk doğrusal hız/yük/süre hedefleri Arda tarafından gerekçelendirildi; donanımda denenmedi. V0-07 öğrenme hedefleriyle mevcut görev bağımlılıklarını korur. Gereksinimler ölçülmeden V0 tamamlandı denmez.
+Başlangıç kontrol tercihi gamepad'dir. Modeli/haberleşme yöntemi, açısal hız, fiziksel duruş eşiği ve tekrar sayısı henüz seçilmedi. İlk doğrusal hız/yük/süre hedefleri Arda tarafından gerekçelendirildi. 20 Hz/250 ms timeout danışman başlangıç varsayımıdır; kullanıcı ölçümü veya resmî varsayılan diye sunulmaz. Donanımda hiçbir hedef denenmedi. Fiziksel duruş sınırı AMR-12'de motor/sürücü kararıyla, komut/çıkış davranışı AMR-17/18'de doğrulanacak. V0-07 öğrenme hedefleriyle mevcut görev bağımlılıklarını korur. Gereksinimler ölçülmeden V0 tamamlandı denmez.
 
 5 kg robotun kendi kütlesinden ayrı faydalı yüktür. Kullanıcı fiyat/performans motor seçimi gerektirirse 3 kg'a düşürmeyi kabul edebileceğini belirtti. Şimdiki hedef 5 kg'dır; AMR-12'de 3 kg seçilirse gereksinim gerekçeli revize edilir ve 3 kg sonucu 5 kg başarısı olarak sunulmaz. Nominal hız bandının 5 kg yükle uygulanabilirliği hesap/ölçümle kontrol edilecek.
 

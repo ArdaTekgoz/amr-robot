@@ -1,6 +1,6 @@
 # AMR-01 - Görev tanımı ve sistem sınırları
 
-Tarih: 12 Ekim 2026. Tahmin: 4 saat. Gerçek süre: henüz kaydedilmedi. Durum: devam ediyor. Donanım gerekmez.
+Başlangıç: 12 Ekim 2026. Tahmin: 4 saat. Toplam aktif süre: yaklaşık 3 saat, kullanıcı tahmini. Durum: son kapanış kontrolü bekleniyor. Donanım gerekmez.
 
 Son oturum: [13 Ekim 2026](../oturumlar/2026-10-13-AMR-01.md). Bu görev birkaç oturuma yayıldı; tamamlanma tarihinden bağımsız olarak kanıtla değerlendirilecek.
 
@@ -58,6 +58,8 @@ Güncel tercih gamepad'dir; model/bağlantı seçimi AMR-12/18'de yapılacak. İ
 
 **İlk üç hedef alındı:** nominal 0,25–0,35 m/s; boş yük/geniş alan azami 0,45 m/s; 5 kg hedef yük (AMR-12'de gerekçeli 3 kg revizyonu mümkün); en az 30 dakika, 5 kg nominal gidiş-dönüş çevriminde ilgili sensörler açık. Gerekçeler ve koşul [13 Ekim kaydında](../oturumlar/2026-10-13-AMR-01.md). 12 V motor/pil modeli henüz seçilmedi. Şimdi timeout/duruş, V1 toleransları ve başarı eşikleri kalan sayısal kararlardır.
 
+**Diğer başlangıç hedefleri alındı:** kullanıcı konum hatası 5 cm, yön hatası 5°, SIM 8/10 ve FİZ 6/10 seçti. Konum ölçütü toplam yatay mesafe olarak tanımlandı; 6–7 cm bütçe revizyonu ayrı kaydedilecek. Timeout bilgi eksiği nedeniyle danışman 20 Hz/250 ms başlangıç varsayımı önerdi; ölçümle AMR-17/18'de değerlendirilecek. Fiziksel duruş sınırı AMR-12'de tanımlanacak. [Kısa kapsam özeti](../kapsam-ozeti.md) son kontrol için hazır.
+
 Yazım kalıbı: “Robot, [tanımlı koşulda], [davranışı], [birim ve eşik] ile gerçekleştirmelidir; [deney yöntemi] ile doğrulanacaktır.”
 
 Örnek: “Kayıtlı haritada, tanımlı boş rotada hedefe varma hatası en fazla ... m olmalıdır; ... referansına göre ölçülecektir.” PDF'deki 0,15 m yalnız ilk tasarım önerisidir; bugün seçilmiş veya ölçülmüş sonuç değildir.
@@ -83,9 +85,9 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [x] Alan çizimi var; 2 × 2 m alan ve 40 × 40 cm robot varsayım olarak kayıtlı.
 - [x] Base/target/engel etiketleri ve gösterilen dar geçiş açıklıkları kayıtlı.
 - [ ] Operatör yeri ve kesikli hatların merkez yolu olduğu notu net.
-- [ ] İlk sayısal hedefler, birimler, gerekçeler ve ölçüm yöntemleri kayıtlı.
+- [x] İlk sayısal hedefler, birimler, gerekçeler ve temel ölçüm yöntemleri kayıtlı; açık teknik kararlar ilgili görevlere bağlandı.
 - [x] İlk doğrusal hız, faydalı yük ve çalışma süresi hedefleri gerekçeyle kaydedildi.
-- [ ] Simülasyon ve fiziksel kabul için başarı eşikleri açık.
+- [x] Simülasyon ve fiziksel kabul için başarı eşikleri açık: SIM ≥8/10, FİZ ≥6/10 normal görev.
 - [x] Arda'nın kendi ilk blok şeması var.
 - [x] Arda haritalamadan hedefe harekete kadar kişisel senaryo açıklamasını sundu.
 - [ ] Blok şemasında komut, geri besleme ve enerji yönleri/etiketleri incelemeden geçti.
@@ -96,9 +98,8 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [x] Arda 250/450 ms alıştırmasında timeout durumunu doğru yorumladı.
 - [ ] Katkı, süre ve kanıt yolları oturum kaydında.
 
-Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Timeout alıştırmasının 250/450 ms yorumu, uçtan uca kişisel senaryo ve ilk hız/yük/süre hedefleri alındı. Kalan sayısal eşikler, son akış açıklaması ve küçük yerleşim notları henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
+Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Sayısal başlangıç hedefleri, kapsam taslağı ve yaklaşık aktif süre kaydı hazır. Son timeout açıklaması ve küçük akış/yerleşim notlarının kapanış kontrolü bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
 
-## Kalan işler: iki kapanış iş grubu
+## Kalan iş: son kapanış kontrolü
 
-1. **Geçici sayısal gereksinimler:** ilk hız, yük ve süre; timeout/fiziksel duruş; V1 toleransları, başarı eşikleri ve engelde durma/bildirim davranışlarının tanımı. Gerekçe ve ölçüm yöntemiyle kayıt.
-2. **Son inceleme ve kayıt:** kısa kapsam, kendi sözleriyle üç akış, laptop/robot sınırı ve kısa besleme/haberleşme/mekanik notları, operatör/merkez yolu notu, kanıt/katkı, gerçek aktif süre ve açık varsayımlar. Kabul karşılanırsa AMR-01 kapanır; donanım seçimi ve robot uygulaması sonraki görevlere aittir.
+[Kapsam özeti](../kapsam-ozeti.md) ve üç akışın son kontrolü; kısa laptop/robot besleme/haberleşme/mekanik ve alan notları; kullanıcı tahmini süre/katkı kaydı. Arda timeout çok kısa veya çok uzun seçilirse ne olacağını kendi sözleriyle açıklayacak. Açık teknik seçimler ve deney koşulları görev kapılarına bağlı kayıtlı; robot uygulaması AMR-01'in koşulu değildir. Son ölçütler sağlanmadan görev tamamlandı işaretlenmez.

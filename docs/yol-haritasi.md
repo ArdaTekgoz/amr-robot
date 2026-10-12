@@ -55,6 +55,7 @@ AMR-20'de V0 şasi/güç ve gereken kontrol bağlantısı önce kurulabilir. Kay
 - AMR-01: Bir sayfalık kapsam, gerekçeli geçici performans değerleri ve Arda'nın kendi blok şeması; üç akışı kendi sözleriyle açıklaması.
 - AMR-12: İlk tezgâh için veri sayfası ve elektriksel/mekanik uyumla gerekçeli bütçe. Tam robot alımı ikinci dilimdir.
 - AMR-11: On sabit simülasyon denemesinin tüm sonuçları ve AMR-01'de seçilen başarı eşiği. İptal ve ulaşılamaz hedef davranışı da incelenir.
+- 13 Ekim başlangıç normal görev eşikleri: SIM en az 8/10, FİZ en az 6/10; hedef konum hatası ≤5 cm ve yön hatası ≤5°. Bütçe gerekirse konum hedefi gerekçeli revize edilir. Timeout için 20 Hz/250 ms danışman başlangıç varsayımıdır. Ayrı hata/duruş gereksinimleri ve bütün deneme kayıtları da kabulün parçasıdır.
 - AMR-19: Gerçek kontrol, timeout, haberleşme ve odometri doğrulanmış olmalı; ardından fiziksel entegrasyon.
 - V0 / AMR-21: Fiziksel şasi/güç ve kalibrasyon; seçilen telefon veya kumandayla uçtan uca komut, durma ve bağlantı kaybı deneyleri. Otonom navigasyon bu ara teslimat için gerekmez.
 - AMR-24: On fiziksel görev ve bütün v1 gereksinimlerinin geçti/kaldı değerlendirmesi; temiz açılıştan tekrarlanabilir demo.

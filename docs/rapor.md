@@ -65,6 +65,10 @@ Kullanıcı ROS 2 PC'nin kendi laptopu olması ve robotla kablosuz bağlantı ku
 
 İlk sayısal hedefler Arda tarafından gerekçelendirildi: nominal seyir 0,25–0,35 m/s (dar alanda hızlanma/yavaşlama alanı), boş yükte geniş alanda azami 0,45 m/s; hedef faydalı yük 5 kg, bütçe/motor uyumunda gerekçeli 3 kg revizyonu mümkün. Robot kendi kütlesi faydalı yükten ayrı hesaplanacak. Kullanıcı en az 30 dakika çalışma koşulunu 5 kg yükle nominal gidiş-dönüş çevrimi ve ilgili robot sensörleri açık olarak seçti; çevrim ayrıntısı henüz yazılmadı. Bu değerler ölçülen performans değildir.
 
+Arda hedef konum toleransını 5 cm (gerekirse bütçeyle 6–7 cm revizyonu), yön toleransını 5° seçti. Başlangıç ölçüm tanımı hedef merkezinden toplam yatay uzaklık ≤0,05 m'dir; eksen başına ±5 cm değildir. SIM normal görev başarı eşiği ≥8/10, FİZ ≥6/10 seçildi. Bu oranlar iptal/komut kaybı/engel duruşu gereksinimlerinin yerine geçmez; tüm on deneme ve başarısızlık nedenleri kaydedilecek. Seçilecek bütçeyle gerçek 5 cm doğruluk henüz doğrulanmadı; Nav2 tolerans parametresi bağımsız fiziksel ölçümün yerine geçmez.
+
+Arda timeout bilgisi eksik olduğu için değer seçemediğini belirtti. Danışman başlangıç varsayımı olarak 20 Hz güncel hız komutu ve 250 ms komut timeout'u önerdi. 50 ms komut aralığına göre beş nominal aralık bekleme, kısa gecikme ile eski komutu sürdürme arasındaki ilk tasarım denemesidir; kablosuz paket/duruş ölçümüyle AMR-17/18'de gözden geçirilecek. Gamepad bırakma ve normal iptalde sıfır komut gönderilir. Fiziksel duruş sınırı, kontrol periyodu ve yeniden başlama ayrıntıları ilgili görevlerde deneyden önce yazılacak. [Nav2 kontrolcü frekansı](https://docs.nav2.org/jazzy/configuration_and_development/configuration_guide/core_servers/controller_server/), [goal checker toleransları](https://docs.nav2.org/jazzy/configuration_and_development/configuration_guide/core_servers/controller_server/controller_server_plugins/simple_goal_checker/) ve [komut timeout'u](https://control.ros.org/jazzy/doc/ros2_controllers/diff_drive_controller/doc/userdoc.html) 13 Ekim 2026'da kontrol edildi; 250 ms bir üretici varsayılanı veya ölçülmüş proje başarısı değildir.
+
 12 V motorlar adaydır; pil kimyası/kapasitesi ve lojik/sensör beslemeleri seçilmedi. Kablolu manuel şarj beklentisi var; şarj süresi üst sınırı açık. Motor boyutlama ve güç bütçesi AMR-12'de yapılacak. İlk alanın geometri/duruş yeterliliği, nominal hız gerekçesiyle kendiliğinden doğrulanmış sayılmaz.
 
 13 Ekim danışman örneğinde 0,45 m/s × 0,3 s = 0,135 m, frenleme başlamadan komut timeout'u beklemesindeki ideal sabit hızlı ilerlemedir. Proje timeout'u henüz seçilmedi. Tepki gecikmesi, frenleme ve açıklık marjının birlikte değerlendirilmesi [Nav2 rehberinden](https://docs.nav2.org/rolling/tutorials/general_tutorials/using_collision_monitor/using_collision_monitor/) kontrol edildi. Pil enerji hesabının güç-zaman ve V/Ah/Wh ilişkisi [TI SLVA642B bölüm 4.1](https://www.ti.com/lit/slva642) ile desteklendi; örnek bisiklet bileşenleri AMR için seçilmedi. Kalan tolerans/timeout/kabul eşikleri açık.
@@ -115,6 +119,8 @@ Blok şemasının V02 revizyonunda renk anahtarı, kontrol yönleri, PC komut/te
 AI: mevcut raporu inceledi; depo, yol haritası, çalışma sayfaları ve rapor iskeletini hazırladı. Bu hazırlık Arda'nın teknik uygulama kanıtı değildir.
 
 Her görevde Arda'nın kendi açıklaması ve öğrendiği konu [oturum kaydında](oturumlar/2026-10-12-AMR-01.md) tutulacak.
+
+AMR-01 için toplam aktif çalışma yaklaşık 3 saat olarak Arda tarafından beyan edildi; saat birimi ayrıca teyit edildi. Günlük dağılım veya kronometre ölçümü bulunmadığından tahmin olarak raporlandı. [Kısa kapsam özeti](kapsam-ozeti.md) hazır; son kişisel timeout açıklaması ve akış/kayıt incelemesi bekleniyor.
 
 ## Ekler
 
