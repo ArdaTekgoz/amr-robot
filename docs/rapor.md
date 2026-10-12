@@ -65,6 +65,10 @@ Kullanıcı ROS 2 PC'nin kendi laptopu olması ve robotla kablosuz bağlantı ku
 
 Sayısal hedeflerin gerekçeleri: **Arda yazacak**.
 
+Arda ayrıca gamepad ile LiDAR haritalama, arayüzde hedef seçimi, “Nav2/A*/SLAM” ile rota hesabı, motor sürücü/enkoder kontrolü ve yeni engelde durmayı içeren uçtan uca kişisel senaryosunu sundu. Danışman SLAM'in harita/poz tahmini, Nav2 planlayıcısının rota, kontrolcüsünün güncel hız komutu üretimi görevlerini ayırdı; STM32'ye rota yerine hız referansları gönderileceğini ve enkoderin hareketi başlatmak yerine geri besleme sağladığını açıkladı. A* olası planlama algoritmasıdır; eklenti seçimi henüz yapılmadı. [Nav2 resmî açıklaması](https://docs.nav2.org/jazzy/configuration_and_development/first_time_robot_setup_guide/navigation_plugins/setup_navigation_plugins/) 13 Ekim 2026'da kontrol edildi.
+
+Ses/LED komut-hareket-hedef bildirimleri ve algılanan yakın engelde yerel durma, R-13/R-14 olarak V1 gereksinim taslağına eklendi. Algılama eşiği/kapsaması, duruş ve yeniden başlama kuralı ile bildirim desenleri henüz belirlenmedi. LiDAR'ın en ucuz yöntem olduğu iddiası doğrulanmadı; model/arayüz/sürücü/bütçe AMR-12'de değerlendirilecek. V0'nun asgari manuel kapsamı bu yeni V1 işlevleriyle genişletilmedi.
+
 ## 5. Tasarım ve uygulama
 
 Kinematik ve birimler (AMR-04): başlanmadı.

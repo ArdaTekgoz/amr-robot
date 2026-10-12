@@ -4,7 +4,7 @@ Arda TEKGÖZ'ün öğrenme odaklı otonom mobil robot geliştirme projesi.
 
 Hedef: tek katlı bir iç mekânda diferansiyel sürüşlü robotla harita oluşturmak, kayıtlı haritada kullanıcının seçtiği erişilebilir konuma otonom gitmek ve başarıyı ölçmek.
 
-İlk fiziksel teslimat **V0: telefon veya kumandayla kontrol edilen mobil platform** olacaktır. Tek kontrol arayüzü yeterlidir; hangisinin kullanılacağı henüz seçilmedi. Haritalama ve otonom navigasyon V0 kabul koşulu değildir.
+İlk fiziksel teslimat **V0: gamepad ile kontrol edilen mobil platform** olacaktır. Gamepad başlangıç kontrol tercihidir; model/bağlantı yöntemi henüz seçilmedi. Haritalama ve otonom navigasyon V0 kabul koşulu değildir.
 
 Ardından **V1: temel otonom AMR** geliştirilecektir. Haritalama sırasında robotu operatör gezdirir. Robot sensör verisinden haritayı oluşturur; kayıtlı haritada hedefe hareket otonomdur. A/B veya base/target noktaları tekrarlı kabul deneyinde kullanılır. Modüler üst yapı, QR/görüntü işleme, periyodik görev ve kendi kendine keşif sonraki sürümlerdir. TEKNOFEST için altyapı oluşturma uzun vadeli amaçtır; yarışma şartnamesi henüz incelenmedi.
 

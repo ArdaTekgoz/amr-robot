@@ -16,9 +16,11 @@ Revizyon: 0.1 taslak | 12 Ekim 2026 | Durum: kapsam belirlendi; sayısal hedef v
 | V0-06 | Motor enerjisini fiziksel olarak kesebilme; kablo/güç düzeninin doğrulanması | AMR-20 güç kontrolü ve enerjiyi kesme deneyi |
 | V0-07 | Ölçülen tekerlek kontrolü ve odometri kalibrasyonu | AMR-19 ve AMR-21 sonuçları; otonom navigasyon gerektirmez |
 
-Telefon/kumanda türü, haberleşme yöntemi, hız, yük, süre, timeout, fiziksel duruş eşiği ve tekrar sayısı henüz seçilmedi. V0-07 öğrenme hedefleriyle mevcut görev bağımlılıklarını korur. Gereksinimler ölçülmeden V0 tamamlandı denmez.
+Başlangıç kontrol tercihi gamepad'dir; modeli/haberleşme yöntemi, hız, yük, süre, timeout, fiziksel duruş eşiği ve tekrar sayısı henüz seçilmedi. V0-07 öğrenme hedefleriyle mevcut görev bağımlılıklarını korur. Gereksinimler ölçülmeden V0 tamamlandı denmez.
 
 Arda'nın [ilk blok şemasında](sistem-mimarisi-inceleme.md) gamepad → ROS 2 PC → STM32 manuel kontrol yolu önerildi. Bu aday mimaridir; bilgisayar yerleşimi ve bağlantı yöntemleri seçilmedi. Dört köşe mesafe sensörü V0'nun asgari kabulüne zorunlu özellik olarak eklenmedi.
+
+13 Ekim senaryo açıklamasında Arda ilk gezdirme/haritalama için gamepad kullanımını tercih etti. İlk kontrol yaklaşımı gamepad olarak kayıtlı; model ve USB/Bluetooth bağlantısı seçilmedi. Telefon arayüzü başlangıç için ayrıca zorunlu değildir.
 
 13 Ekim güncellemesi: Arda ROS 2 PC'nin kendi laptopu olmasını ve robotla kablosuz haberleşmesini beklediğini belirtti. Harici laptop başlangıç adayı olarak desteklendi; robot tarafı kablosuz birim ve protokol henüz seçilmedi. Laptop kendi beslemesiyle, robot bileşenleri robot güç dağıtımıyla beslenecek. Laptopun Docker/ağ çalışırlığı ve kablosuz veri yolu henüz doğrulanmadı.
 

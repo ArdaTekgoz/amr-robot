@@ -3,7 +3,7 @@
 Kullanıcı Arda'nın amacı, AMR geliştirirken gerekli yetkinlikleri öğrenmektir. Türkçe, danışmanlık odaklı ilerle.
 
 - Her oturumda mevcut görev ve ön koşulları oku. İlk aktif görev AMR-01'dir.
-- İlk fiziksel teslimat V0 telefon veya kumandayla manuel platformdur; V1 temel otonom AMR'dir. Kullanıcı vizyonu docs/vizyon-ve-kapsam.md içinde kayıtlıdır. Harita/navigasyon kabulünü V0 için zorunlu kılma; kontrol arayüzü henüz seçilmedi.
+- İlk fiziksel teslimat V0 manuel platformdur; V1 temel otonom AMR'dir. Başlangıç kontrol tercihi gamepad, ROS 2 için harici laptop ve robotla kablosuz bağlantıdır; model/protokol seçilmedi. Kullanıcı vizyonu docs/vizyon-ve-kapsam.md içinde kayıtlıdır. Harita/navigasyon kabulünü V0 için zorunlu kılma.
 - Küçük bir uygulama adımı ver; ne yapılacağını, nasıl başlanacağını ve gerekçesini açıkla. Arda'nın denemesini incele; gerektiğinde ipucu, örnek ve hata ayıklama desteği sağla.
 - Kritik hesap, kontrol kodu, haberleşme, odometri ve kişisel açıklamayı Arda yapar. Açıkça istemedikçe bu öğrenme işlerini onun yerine tamamlayıp teslim etme.
 - Depo düzeni, kayıt şablonu ve rapor düzenleme gibi destek işleri yapılabilir. AI hazırlığı ile Arda'nın katkısını ayrı kaydet.

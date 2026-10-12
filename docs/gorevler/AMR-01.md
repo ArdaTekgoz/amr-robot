@@ -30,7 +30,7 @@ Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel 
 
 ## 3. Sistem sınırı ve sorumluluklar (45 dakika öneri)
 
-**Şu anki uygulama adımı budur.** Alan çizimini tekrar tekrar ayrıntılandırmak yerine sistem blok şemasına geçilecek. Telefon/kumanda arayüzünü de bloklara ekle. Henüz model, pin, gerilim veya haberleşme teknolojisi seçmek gerekmiyor.
+**Bu adımın ilk çıktıları alındı; aktif uygulama artık 4. adımdaki sayısal hedeflerdir.** Alan çizimi ve blok şeması kayıtlıdır. Kalan küçük akış/yerleşim notları son incelemede tamamlanacak. Henüz model, pin, gerilim veya haberleşme teknolojisi seçmek gerekmiyor.
 
 **İlk şema alındı:** Arda gamepad, ROS 2 PC, Nucleo, sol/sağ sürücü-motor-enkoder, dört mesafe sensörü ve güç kaynağını çizdi. [Şema incelemesinde](../sistem-mimarisi-inceleme.md) motor kontrol okları, sürücü-motor bağlantısı, güç dalları ve veri etiketleri için düzeltmeler kayıtlı. Gamepad mimarisi ve dört sensör henüz aday; haritalama sensörü ayrı seçim konusu. Şimdiki küçük uygulama bu şemanın revizyonudur.
 
@@ -39,6 +39,8 @@ Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel 
 **V03 alındı / 13 Ekim:** Haritalama-PC veri yolu, sürücü-motor güç rengi ve sol ön sensör ölçüm rengi düzeltildi. Motor sürücü/enkoder temel rol açıklamaları alındı. Komut tamamlanmasıyla komutun alınma zamanı karıştığından kısa zaman çizelgesi alıştırması yapılacak. Laptopun harici olması ve robotla kablosuz haberleşme beklentisi kaydedildi; arayüz seçimi açık. Önce bu kavram netleşecek, sonra geçici performans değerlerine geçilecek.
 
 **Alıştırma yanıtı alındı:** Arda 250/450 ms timeout koşullarını doğru yorumladı. Son geçerli komutun 100 ms'de alındığı danışman tarafından açıklandı; Arda bu soruya cevap vermedi. Arayüzdeki tek hedef görevi ile STM32'ye giden güncel hız komutlarının ayrımı açıklandı: hedef/rota/takip ROS 2/Nav2'de, tekerlek kontrolü ve timeout STM32'de. Kişisel kısa rol özeti ve kalan yerleşim notlarıyla mimari adımı kapatılacak.
+
+**Uçtan uca kişisel açıklama alındı:** Arda gamepad ile LiDAR haritalama, arayüz hedefi, navigasyon, sürücü/enkoder, yeni engelde durma ve ses/LED bildirimlerini anlattı. SLAM/planlama ayrımı, STM32'ye giden güncel hız referansı ve enkoder geri beslemesi için düzeltmeler açıklandı. Temel senaryo sayısal hedeflere geçmek için yeterli; bütün akışların kişisel açıklama kabulü son incelemede kalır. Yeni V1 davranışları R-13/R-14 olarak kaydedildi.
 
 STM32, ROS 2 bilgisayarı, motor sürücü, motorlar, enkoderler, mesafe sensörü ve güç kaynağı için bloklar çiz. Her okun üzerine “ne taşınıyor?” yaz. Komut, geri besleme ve enerji için ayrı ok biçimi/renk seç.
 
@@ -50,7 +52,9 @@ Kendine sor: Hedef koordinatı ile motor sürme komutu aynı şey mi? Enkoder ba
 
 [Çalışma sayfasını](../gereksinimler-v1.md) doldur. Hız, yük, çalışma süresi, konum/açı toleransı, başarı eşiği ve duruş davranışı için geçici hedef + gerekçe + ölçüm yöntemi yaz. Parça alımına bağlanan değerler AMR-12'de tekrar değerlendirilecek.
 
-Önce [V0 çalışma sayfasındaki](../gereksinimler-v0.md) manuel kontrol hedeflerini seç; V1 konumlanma ve navigasyon hedeflerini ayrı tut. Telefon veya kumandadan hangisinin ilk kontrol arayüzü olacağı henüz açık bir karardır.
+Önce [V0 çalışma sayfasındaki](../gereksinimler-v0.md) manuel kontrol hedeflerini seç; V1 konumlanma ve navigasyon hedeflerini ayrı tut. İlk kontrol tercihi gamepad; model ve bağlantı yöntemi açık.
+
+Güncel tercih gamepad'dir; model/bağlantı seçimi AMR-12/18'de yapılacak. İlk küçük uygulama: düz sürüş için hedef hızı, robotun kendi ağırlığı dışında taşıyacağı faydalı yükü ve tanımlı kullanımda çalışma süresini Arda gerekçelendirecek. 2 m / seçilen süre hesabı hız birimini anlamak için kullanılabilir; gerçek rota uzunluğu 2 m sayılmaz.
 
 Yazım kalıbı: “Robot, [tanımlı koşulda], [davranışı], [birim ve eşik] ile gerçekleştirmelidir; [deney yöntemi] ile doğrulanacaktır.”
 
@@ -80,6 +84,7 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [ ] İlk sayısal hedefler, birimler, gerekçeler ve ölçüm yöntemleri kayıtlı.
 - [ ] Simülasyon ve fiziksel kabul için başarı eşikleri açık.
 - [x] Arda'nın kendi ilk blok şeması var.
+- [x] Arda haritalamadan hedefe harekete kadar kişisel senaryo açıklamasını sundu.
 - [ ] Blok şemasında komut, geri besleme ve enerji yönleri/etiketleri incelemeden geçti.
 - [ ] Arda komut, geri besleme ve enerji akışını kendi sözleriyle açıklayabiliyor.
 - [x] Arda komut kaybında durma sorumluluğunun STM32'de olduğunu belirtti.
@@ -88,10 +93,9 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [x] Arda 250/450 ms alıştırmasında timeout durumunu doğru yorumladı.
 - [ ] Katkı, süre ve kanıt yolları oturum kaydında.
 
-Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Timeout alıştırmasının 250/450 ms yorumu alındı. Kısa kişisel görev/komut rol özeti, laptop/robot sınır notları ve ilk sayısal performans hedefleri henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
+Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Timeout alıştırmasının 250/450 ms yorumu ve uçtan uca kişisel senaryo alındı. İlk sayısal performans hedefleri, son akış açıklaması ve küçük yerleşim notları henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
 
-## Kalan işler: üç kapanış adımı
+## Kalan işler: iki kapanış iş grubu
 
-1. **Mimari ve kısa notlar:** Arda'nın hedef/rota/hız/timeout rol özeti; laptop/robot sınırı ve besleme/haberleşme notları, motor-enkoder mekanik etiketi, operatör/merkez yolu notu. Kısa yazılı notlar yeterli; yeniden tam çizim gerekmiyor.
-2. **Geçici sayısal gereksinimler:** ilk hız, yük ve süre; timeout/fiziksel duruş; V1 toleransları ve başarı eşikleri. Gerekçe ve ölçüm yöntemiyle kayıt.
-3. **Son inceleme ve kayıt:** kısa kapsam, kendi sözleriyle üç akış, kanıt/katkı, gerçek aktif süre ve açık varsayımlar. Kabul karşılanırsa AMR-01 kapanır; donanım seçimi ve robot uygulaması sonraki görevlere aittir.
+1. **Geçici sayısal gereksinimler:** ilk hız, yük ve süre; timeout/fiziksel duruş; V1 toleransları, başarı eşikleri ve engelde durma/bildirim davranışlarının tanımı. Gerekçe ve ölçüm yöntemiyle kayıt.
+2. **Son inceleme ve kayıt:** kısa kapsam, kendi sözleriyle üç akış, laptop/robot sınırı ve kısa besleme/haberleşme/mekanik notları, operatör/merkez yolu notu, kanıt/katkı, gerçek aktif süre ve açık varsayımlar. Kabul karşılanırsa AMR-01 kapanır; donanım seçimi ve robot uygulaması sonraki görevlere aittir.

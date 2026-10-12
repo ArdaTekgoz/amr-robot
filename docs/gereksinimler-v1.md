@@ -1,6 +1,6 @@
 # AMR v1 - Gereksinim çalışma sayfası
 
-Revizyon: 0.2 taslak | 12 Ekim 2026 | Durum: kullanım senaryosu kaydedildi; sayısal hedefler bekleniyor. İlk fiziksel ara teslimat için [V0 gereksinimleri](gereksinimler-v0.md) kullanılır.
+Revizyon: 0.3 taslak | Güncelleme: 13 Ekim 2026 | Durum: kullanım senaryosu ve yeni davranış beklentileri kaydedildi; sayısal hedefler bekleniyor. İlk fiziksel ara teslimat için [V0 gereksinimleri](gereksinimler-v0.md) kullanılır.
 
 ## Amaç ve kapsam
 
@@ -30,7 +30,11 @@ Boş alanlar eksik karardır; varsayılan başarı değeri değildir. SIM ve Fİ
 | R-10 | İptalde durma; ulaşılamaz hedefte tanımlı hata bildirimi | Süre/koşul seçilecek | SIM/FİZ: iptal ve kapalı yol senaryosu |
 | R-11 | Algılanan engelde geçilebilir alternatif rota varsa yeniden planlama; rota yoksa sınırlı deneme sonrası durum bildirimi | Süre/yeniden deneme/sensör sınırları seçilecek | SIM/FİZ: alternatif yol açık ve bütün yollar kapalı deneylerini ayrı uygula |
 | R-12 | Harita arayüzünden base/target seçme; açık başlatmayla target'a gitme, ... s bekleme ve base'e dönme | Temel görev dizisi hedefi; ayrıntı seçilecek | SIM/FİZ: gidiş, bekleme, dönüş ve iptal kayıtları; otomatik periyodik başlatma dahil değil |
+| R-13 | Yakın mesafe algılama tarafından algılanan, haritada önceden bulunmayan engelde yerel durma davranışı; geçerli hız isteğini engel durumunda geçersiz kılma | Kullanıcı talebi; algılama kapsaması, eşik, filtre, duruş ve tekrar hareket koşulu seçilecek | FİZ: sensör görüşünde yeni engel; algılama anı, sıfır referans, duruş süresi/mesafesi ve durum bildirimi. Rota alternatifi ayrı R-11 deneyi |
+| R-14 | Komut kabulü, hareket ve hedefe varış için sesli ve LED durum bildirimi | Kullanıcı talebi; desen, zamanlama ve “komut” olayının görev/hız mesajı ayrımı henüz netleştirilecek | FİZ: tanımlı olay-durum tablosu, ses/LED gözlemi ve kayıt; hedefe varış ROS tarafında doğrulanacak |
 
 R-08'de “başarı” tanımı: doğru hedef + R-07 toleransı + tanımlı süre sınırı (... s) + iptal/hata gerektirmeyen normal tamamlanma. Süre ve deney koşulları Arda tarafından yazılacak. R-09 timeout ile mekanik duruş süresi aynı büyüklük değildir.
 
 PDF'deki 0,15 m konum eşiği bir öneridir. Her sayısal seçim için gerekçe ve revizyon raporda tutulur; donanım hedefleri AMR-12'de, fiziksel tolerans AMR-23'te ölçüm kabiliyetiyle gözden geçirilir. Bu sayfa bugün robotun başarılı olduğunu iddia etmez.
+
+13 Ekim açıklaması: gamepad ile ilk haritalama ve LiDAR kullanımı tercih olarak ifade edildi; LiDAR tür/modeli, uyum ve maliyet karşılaştırması AMR-12'de yapılacak. “En ucuz çözüm” henüz doğrulanmadı. R-13 sensörlerin bütün nesneleri algıladığı iddiası değildir; durma, algılama kapsamı ve eşikler içinde sınanacak. Yerel durma davranışı ile ROS tarafındaki yeniden planlama/yeniden başlama birbirinden ayrıdır. R-13/R-14 V1 davranışları olarak kaydedildi; V0'nun manuel asgari kapsamını kendiliğinden genişletmez. Ses/LED bileşenlerinin ek maliyet ve uygulama etkisi henüz tahmin edilmedi.
