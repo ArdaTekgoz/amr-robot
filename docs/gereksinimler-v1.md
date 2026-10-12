@@ -1,6 +1,6 @@
 # AMR v1 - Gereksinim çalışma sayfası
 
-Revizyon: 0.3 taslak | Güncelleme: 13 Ekim 2026 | Durum: kullanım senaryosu ve yeni davranış beklentileri kaydedildi; sayısal hedefler bekleniyor. İlk fiziksel ara teslimat için [V0 gereksinimleri](gereksinimler-v0.md) kullanılır.
+Revizyon: 0.4 taslak | Güncelleme: 13 Ekim 2026 | Durum: ilk hız/yük/süre hedefleri kaydedildi; kalan kabul eşikleri bekleniyor. İlk fiziksel ara teslimat için [V0 gereksinimleri](gereksinimler-v0.md) kullanılır.
 
 ## Amaç ve kapsam
 
@@ -21,9 +21,9 @@ Boş alanlar eksik karardır; varsayılan başarı değeri değildir. SIM ve Fİ
 | R-01 | Operatör gezdirirken harita oluşturup kaydetme; temiz oturumda yeniden yükleme | Kapsam kararı; denenmedi | SIM/FİZ: bilinen duvarlar ve yeniden açılış |
 | R-02 | Kayıtlı haritada seçilen erişilebilir hedefe otonom gitme | Kapsam kararı; denenmedi | SIM/FİZ: sabit A/B görev dizisi |
 | R-03 | İlerliyor, ulaştı, iptal edildi, başarısız durumlarının gözlenebilmesi | Tasarım hedefi; denenmedi | Normal görev, iptal ve ulaşılamaz hedef deneyi |
-| R-04 | Azami doğrusal hız: ... m/s; açısal hız: ... rad/s | Geçici değer seçilecek | Referans/ölçülen hız logu; fiziksel hız kontrolü |
-| R-05 | Faydalı yük: ... kg; robot kütlesinden ayrı | Geçici değer seçilecek | FİZ: tanımlı yük ve aynı rota deneyi |
-| R-06 | Çalışma süresi: ... dakika; yük/hareket oranı: ... | Geçici değer seçilecek | FİZ: tanımlı çevrim ve enerji/çalışma kaydı |
+| R-04 | Nominal doğrusal hız 0,25–0,35 m/s; boş yükte geniş alanda azami 0,45 m/s; açısal hız ... rad/s | Kullanıcının geçici doğrusal hedefi; açısal sınır/dar alan limiti açık | Referans/ölçülen hız logu; 5 kg nominal ve boş yük azami koşulları ayrı |
+| R-05 | Hedef faydalı yük 5 kg; robot kütlesinden ayrı. Bütçe/motor uyumuna göre gerekçeli 3 kg revizyonu mümkün | Kullanıcının geçici hedefi; AMR-12'de doğrulanacak/revize edilecek | FİZ: geçerli gereksinim revizyonundaki yükle aynı rota; 3 kg deneyi 5 kg kabulü değildir |
+| R-06 | En az 30 dakika; 5 kg hedef yük, nominal hız bandında tanımlı gidiş-dönüş çevrimi, ilgili robot sensörleri açık | Kullanıcı koşulu seçti; çevrim ve hareket/bekleme oranı ayrıntısı açık | FİZ: yük/rota/elektronik konfigürasyonu ile enerji ve çalışma kaydı; laptop kendi beslemesi ayrı |
 | R-07 | Hedef konum hatası ≤ ... m; açı hatası ≤ ... derece | Geçici değer seçilecek | SIM: dünya referansı; FİZ: bağımsız konum/açı ölçümü |
 | R-08 | SIM başarı: ... /10; FİZ başarı: ... /10 | Deneyden önce seçilecek | On sabit görev; başarısızlar dahil tam kayıt |
 | R-09 | Geçerli komut kesilince timeout: ... ms; fiziksel duruş sınırı: ... s | Geçici değer seçilecek | Son geçerli mesaj, sıfır referans ve gerçek duruş zamanlarını ayrı ölç |
@@ -36,5 +36,9 @@ Boş alanlar eksik karardır; varsayılan başarı değeri değildir. SIM ve Fİ
 R-08'de “başarı” tanımı: doğru hedef + R-07 toleransı + tanımlı süre sınırı (... s) + iptal/hata gerektirmeyen normal tamamlanma. Süre ve deney koşulları Arda tarafından yazılacak. R-09 timeout ile mekanik duruş süresi aynı büyüklük değildir.
 
 PDF'deki 0,15 m konum eşiği bir öneridir. Her sayısal seçim için gerekçe ve revizyon raporda tutulur; donanım hedefleri AMR-12'de, fiziksel tolerans AMR-23'te ölçüm kabiliyetiyle gözden geçirilir. Bu sayfa bugün robotun başarılı olduğunu iddia etmez.
+
+Hız gerekçesi: kullanıcı nominal bandı dar alanda hızlanma/yavaşlama alanı için, azami hızı boş yükle geniş alan için önerdi. Bu gerekçe henüz yeterli durma mesafesi veya geometrik geçilebilirliğin doğrulandığı anlamına gelmez. Hız, tepki gecikmesi, frenleme ve alan açıklığı birlikte değerlendirilecek. 2 × 2 m ilk varsayımsal alan, geniş alan azami hız deneyiyle aynı koşul değildir.
+
+12 V motor kullanımı adaydır; tüm bileşenlerin 12 V ile besleneceği varsayılmadı. Pil seçimi ortalama güç, süre, tepe akımı, besleme dönüşümleri ve maliyetle AMR-12'de yapılacak. Manuel kablolu şarj beklentisi var; şarj süresi üst sınırı henüz açık.
 
 13 Ekim açıklaması: gamepad ile ilk haritalama ve LiDAR kullanımı tercih olarak ifade edildi; LiDAR tür/modeli, uyum ve maliyet karşılaştırması AMR-12'de yapılacak. “En ucuz çözüm” henüz doğrulanmadı. R-13 sensörlerin bütün nesneleri algıladığı iddiası değildir; durma, algılama kapsamı ve eşikler içinde sınanacak. Yerel durma davranışı ile ROS tarafındaki yeniden planlama/yeniden başlama birbirinden ayrıdır. R-13/R-14 V1 davranışları olarak kaydedildi; V0'nun manuel asgari kapsamını kendiliğinden genişletmez. Ses/LED bileşenlerinin ek maliyet ve uygulama etkisi henüz tahmin edilmedi.

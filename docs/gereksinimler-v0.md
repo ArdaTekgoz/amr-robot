@@ -1,6 +1,6 @@
 # V0 - Manuel mobil platform gereksinimleri
 
-Revizyon: 0.1 taslak | 12 Ekim 2026 | Durum: kapsam belirlendi; sayısal hedef ve kontrol arayüzü bekleniyor.
+Revizyon: 0.2 taslak | Güncelleme: 13 Ekim 2026 | Durum: ilk hız/yük/süre hedefleri kaydedildi; kalan eşikler ve donanım doğrulaması bekleniyor.
 
 İlk fiziksel prototip: düz zeminde operatörün telefon veya kumanda üzerinden hareket ettirebildiği diferansiyel sürüşlü platform. Bu teslimat, otonom AMR geliştirmesinin hareket tabanıdır.
 
@@ -11,12 +11,16 @@ Revizyon: 0.1 taslak | 12 Ekim 2026 | Durum: kapsam belirlendi; sayısal hedef v
 | V0-01 | Seçilecek tek arayüzden ileri, geri, sağ/sol dönüş ve durma komutları | Tanımlı test alanında her komut için beklenen/gerçek hareket kaydı |
 | V0-02 | Komut bırakılınca belirlenen davranışla durma; başlangıç/reset sonrasında istemsiz hareket olmaması | Başlangıç, reset ve komut bırakma deneyi; davranış/süre seçilecek |
 | V0-03 | Geçerli komut kaybında STM32'nin belirlenen timeout ile sıfır referansa geçmesi | Bağlantı kesme: son geçerli mesaj, sıfır referans ve gerçek duruş sürelerini ayrı ölç |
-| V0-04 | Hız sınırı ... m/s; açısal hız ... rad/s | Referans ve ölçülen tekerlek/gövde hızlarını karşılaştır |
-| V0-05 | ... dakika tanımlı kullanım; faydalı yük ... kg | Görev çevrimi, yük ve süre kayıtlı fiziksel deney |
+| V0-04 | Nominal seyir 0,25–0,35 m/s; boş yükte geniş alanda azami 0,45 m/s; açısal sınır henüz seçilmedi | Referans/ölçülen hız logu. Nominal bant ve boş yük azami koşulunu ayrı dene; dar alan hızını duruş/açıklık ölçümlerine göre sınırla |
+| V0-05 | 5 kg hedef faydalı yükle, nominal hız bandında tanımlı gidiş-dönüş çevrimi ve ilgili robot sensörleri açıkken en az 30 dakika | Yük, rota, hareket/bekleme oranı, elektronik konfigürasyonu ve robot batarya enerji/süre kaydı. Çevrim ayrıntısı henüz yazılacak |
 | V0-06 | Motor enerjisini fiziksel olarak kesebilme; kablo/güç düzeninin doğrulanması | AMR-20 güç kontrolü ve enerjiyi kesme deneyi |
 | V0-07 | Ölçülen tekerlek kontrolü ve odometri kalibrasyonu | AMR-19 ve AMR-21 sonuçları; otonom navigasyon gerektirmez |
 
-Başlangıç kontrol tercihi gamepad'dir; modeli/haberleşme yöntemi, hız, yük, süre, timeout, fiziksel duruş eşiği ve tekrar sayısı henüz seçilmedi. V0-07 öğrenme hedefleriyle mevcut görev bağımlılıklarını korur. Gereksinimler ölçülmeden V0 tamamlandı denmez.
+Başlangıç kontrol tercihi gamepad'dir. Modeli/haberleşme yöntemi, açısal hız, timeout, fiziksel duruş eşiği ve tekrar sayısı henüz seçilmedi. İlk doğrusal hız/yük/süre hedefleri Arda tarafından gerekçelendirildi; donanımda denenmedi. V0-07 öğrenme hedefleriyle mevcut görev bağımlılıklarını korur. Gereksinimler ölçülmeden V0 tamamlandı denmez.
+
+5 kg robotun kendi kütlesinden ayrı faydalı yüktür. Kullanıcı fiyat/performans motor seçimi gerektirirse 3 kg'a düşürmeyi kabul edebileceğini belirtti. Şimdiki hedef 5 kg'dır; AMR-12'de 3 kg seçilirse gereksinim gerekçeli revize edilir ve 3 kg sonucu 5 kg başarısı olarak sunulmaz. Nominal hız bandının 5 kg yükle uygulanabilirliği hesap/ölçümle kontrol edilecek.
+
+12 V motorlar aday güç mimarisidir; motor modeli/pil/kapasite/kimya seçilmedi. Lojik, sensör ve enkoder beslemeleri seçilen parçaların veri sayfalarına göre dağıtılacak. Laptop kendi beslemesini kullanır. Kablolu manuel şarj beklentisi kaydedildi; şarj süresi için sayısal üst sınır henüz belirlenmedi. Bunlar AMR-12/20'de kesinleştirilecek.
 
 Arda'nın [ilk blok şemasında](sistem-mimarisi-inceleme.md) gamepad → ROS 2 PC → STM32 manuel kontrol yolu önerildi. Bu aday mimaridir; bilgisayar yerleşimi ve bağlantı yöntemleri seçilmedi. Dört köşe mesafe sensörü V0'nun asgari kabulüne zorunlu özellik olarak eklenmedi.
 

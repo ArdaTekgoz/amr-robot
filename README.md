@@ -14,7 +14,7 @@ Ardından **V1: temel otonom AMR** geliştirilecektir. Haritalama sırasında ro
 - ROS 2 daha önce Docker üzerinden kurulmuş; sürüm ve çalışır durum AMR-02'de doğrulanacak.
 - Harici laptop ve kablosuz robot bağlantısı başlangıç adayı; robot tarafı haberleşme birimi/protokol henüz seçilmedi.
 - STM32 Nucleo alınması planlanıyor; model seçilmedi. Motor, enkoder, sürücü ve sensör mevcut değil.
-- Test mekânı ve sayısal performans hedefleri henüz belirlenmedi.
+- Gerçek test mekânı seçilmedi. İlk geçici hedefler: 0,25–0,35 m/s seyir; boş yük/geniş alanda 0,45 m/s azami hız; 5 kg faydalı yük; tanımlı 5 kg nominal çevrimde ilgili robot sensörleri açıkken en az 30 dakika. Donanım uygulanabilirliği ve kalan kabul eşikleri doğrulanmadı.
 - Robot kodu ve deney sonucu henüz yok. Depo başlangıcı, uygulama başarısı değildir.
 
 ## Çalışma biçimi

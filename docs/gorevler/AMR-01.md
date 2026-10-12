@@ -56,6 +56,8 @@ Kendine sor: Hedef koordinatı ile motor sürme komutu aynı şey mi? Enkoder ba
 
 Güncel tercih gamepad'dir; model/bağlantı seçimi AMR-12/18'de yapılacak. İlk küçük uygulama: düz sürüş için hedef hızı, robotun kendi ağırlığı dışında taşıyacağı faydalı yükü ve tanımlı kullanımda çalışma süresini Arda gerekçelendirecek. 2 m / seçilen süre hesabı hız birimini anlamak için kullanılabilir; gerçek rota uzunluğu 2 m sayılmaz.
 
+**İlk üç hedef alındı:** nominal 0,25–0,35 m/s; boş yük/geniş alan azami 0,45 m/s; 5 kg hedef yük (AMR-12'de gerekçeli 3 kg revizyonu mümkün); en az 30 dakika, 5 kg nominal gidiş-dönüş çevriminde ilgili sensörler açık. Gerekçeler ve koşul [13 Ekim kaydında](../oturumlar/2026-10-13-AMR-01.md). 12 V motor/pil modeli henüz seçilmedi. Şimdi timeout/duruş, V1 toleransları ve başarı eşikleri kalan sayısal kararlardır.
+
 Yazım kalıbı: “Robot, [tanımlı koşulda], [davranışı], [birim ve eşik] ile gerçekleştirmelidir; [deney yöntemi] ile doğrulanacaktır.”
 
 Örnek: “Kayıtlı haritada, tanımlı boş rotada hedefe varma hatası en fazla ... m olmalıdır; ... referansına göre ölçülecektir.” PDF'deki 0,15 m yalnız ilk tasarım önerisidir; bugün seçilmiş veya ölçülmüş sonuç değildir.
@@ -82,6 +84,7 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [x] Base/target/engel etiketleri ve gösterilen dar geçiş açıklıkları kayıtlı.
 - [ ] Operatör yeri ve kesikli hatların merkez yolu olduğu notu net.
 - [ ] İlk sayısal hedefler, birimler, gerekçeler ve ölçüm yöntemleri kayıtlı.
+- [x] İlk doğrusal hız, faydalı yük ve çalışma süresi hedefleri gerekçeyle kaydedildi.
 - [ ] Simülasyon ve fiziksel kabul için başarı eşikleri açık.
 - [x] Arda'nın kendi ilk blok şeması var.
 - [x] Arda haritalamadan hedefe harekete kadar kişisel senaryo açıklamasını sundu.
@@ -93,7 +96,7 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [x] Arda 250/450 ms alıştırmasında timeout durumunu doğru yorumladı.
 - [ ] Katkı, süre ve kanıt yolları oturum kaydında.
 
-Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Timeout alıştırmasının 250/450 ms yorumu ve uçtan uca kişisel senaryo alındı. İlk sayısal performans hedefleri, son akış açıklaması ve küçük yerleşim notları henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
+Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Timeout alıştırmasının 250/450 ms yorumu, uçtan uca kişisel senaryo ve ilk hız/yük/süre hedefleri alındı. Kalan sayısal eşikler, son akış açıklaması ve küçük yerleşim notları henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
 
 ## Kalan işler: iki kapanış iş grubu
 
