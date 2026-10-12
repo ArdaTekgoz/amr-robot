@@ -1,0 +1,63 @@
+# AMR-01 - Görev tanımı ve sistem sınırları
+
+Tarih: 12 Ekim 2026. Tahmin: 4 saat. Gerçek süre: henüz kaydedilmedi. Durum: devam ediyor. Donanım gerekmez.
+
+## Bugünün öğrenme hedefi
+
+Bir robot fikrini kapsamı belirli, ölçülebilir ve doğrulanabilir gereksinimlere dönüştürmek. Bugün kod veya parça satın alımı gerekmiyor.
+
+## 1. Kullanım senaryosu - önce bunu Arda yazacak (25 dakika öneri)
+
+Kendi sözlerinle 5-7 cümle yaz: Robot ne yapacak, harita nasıl oluşacak, hedefi kim verecek, hedefe varınca ne olacak, yol kapalıysa ne bildirecek, hangi işleri v1'de yapmayacak?
+
+**Neden:** Kullanım senaryosu belirsizse başarılı çalışan bir yazılım bile ihtiyacını karşılamayabilir.
+
+Ölçülmüş mekân yok. Bunu gizleme. Simülasyon için hayalî bir oda tasarlayabilirsin; boyutları “simülasyon varsayımı” diye etiketle. Gerçek alan ölçümleri daha sonra gelecek.
+
+## 2. Alan ve istasyon çizimi (35 dakika öneri)
+
+Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel ve iki hedef noktası çiz. Eksen yönünü, metre cinsinden boyutları, en dar geçişi ve başlangıç noktasını işaretle. Ölçü yoksa varsayım yaz. A/B bu çizimde kabul deneyi için kullanılacak.
+
+**Neden:** Robot boyutu ve geçiş genişliği, hangi hedeflerin erişilebilir olduğunu belirler. İlk çizim gerçek test alanı haritası değildir.
+
+## 3. Sistem sınırı ve sorumluluklar (45 dakika öneri)
+
+STM32, ROS 2 bilgisayarı, motor sürücü, motorlar, enkoderler, mesafe sensörü ve güç kaynağı için bloklar çiz. Her okun üzerine “ne taşınıyor?” yaz. Komut, geri besleme ve enerji için ayrı ok biçimi/renk seç.
+
+Kendine sor: Hedef koordinatı ile motor sürme komutu aynı şey mi? Enkoder bana hangi ölçümü verir? Motor enerjisini hangi blok sağlar? Bilgisayardan mesaj gelmezse hangi blok karar vermeli?
+
+**Neden:** Veriyi, kontrol kararını ve gücü ayırmak entegrasyon hatalarını bulmayı kolaylaştırır. Hazır şemayı kopyalamak yerine kendi şemanı açıklaman bekleniyor.
+
+## 4. Gereksinimleri ölçülebilir yaz (50 dakika öneri)
+
+[Çalışma sayfasını](../gereksinimler-v1.md) doldur. Hız, yük, çalışma süresi, konum/açı toleransı, başarı eşiği ve duruş davranışı için geçici hedef + gerekçe + ölçüm yöntemi yaz. Parça alımına bağlanan değerler AMR-12'de tekrar değerlendirilecek.
+
+Yazım kalıbı: “Robot, [tanımlı koşulda], [davranışı], [birim ve eşik] ile gerçekleştirmelidir; [deney yöntemi] ile doğrulanacaktır.”
+
+Örnek: “Kayıtlı haritada, tanımlı boş rotada hedefe varma hatası en fazla ... m olmalıdır; ... referansına göre ölçülecektir.” PDF'deki 0,15 m yalnız ilk tasarım önerisidir; bugün seçilmiş veya ölçülmüş sonuç değildir.
+
+## 5. İnceleme ve kişisel açıklama (35 dakika öneri)
+
+Çizimini ve gereksinimlerini danışmana getir. Özellikle şu üç açıklamayı yardım almadan yapmayı dene:
+
+1. Seçtiğim hedef, tekerlek hareketine nasıl dönüşüyor?
+2. Robot hareketin gerçekleştiğini hangi geri beslemeyle anlıyor?
+3. Güç kaynağından motor ve bilgisayara enerji nasıl gidiyor?
+
+## 6. Rapor ve kayıt (20 dakika öneri)
+
+Oturum kaydına senin yaptığın kısmı, AI desteğini, süreyi ve açık soruları yaz. Gereksinim sayfasını kısa tut; açıklama ve gerekçelerin ayrıntısını rapora ekle. Son olarak yapılan değişiklikleri inceleyip Git kaydına dönüştürmeyi öğren.
+
+Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çalışma değildir.
+
+## Tamamlanma kontrolü
+
+- [ ] Kısa kapsamda v1 içi ve dışı açık.
+- [ ] Alan/istasyon çizimi var; varsayım ve ölçüm ayrı.
+- [ ] İlk sayısal hedefler, birimler, gerekçeler ve ölçüm yöntemleri kayıtlı.
+- [ ] Simülasyon ve fiziksel kabul için başarı eşikleri açık.
+- [ ] Arda'nın kendi blok şeması var.
+- [ ] Arda komut, geri besleme ve enerji akışını kendi sözleriyle açıklayabiliyor.
+- [ ] Katkı, süre ve kanıt yolları oturum kaydında.
+
+Kanıt hedefi: evidence/AMR-01/ altında alan çizimi ve blok şeması; docs/gereksinimler-v1.md içinde gereksinimler. Henüz bu kanıtlar üretilmedi.

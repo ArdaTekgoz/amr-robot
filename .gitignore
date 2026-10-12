@@ -1,0 +1,23 @@
+# Yerel ortam ve geçici çıktılar
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+tmp/
+.DS_Store
+Thumbs.db
+
+# ROS derleme çıktıları
+build/
+install/
+log/
+
+# Büyük deney kayıtları; gerekli örnekler ayrıca seçilerek paylaşılır
+*.bag
+*.db3
+*.mcap
+*.mp4
+*.mov
