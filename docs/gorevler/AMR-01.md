@@ -38,6 +38,8 @@ Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel 
 
 **V03 alındı / 13 Ekim:** Haritalama-PC veri yolu, sürücü-motor güç rengi ve sol ön sensör ölçüm rengi düzeltildi. Motor sürücü/enkoder temel rol açıklamaları alındı. Komut tamamlanmasıyla komutun alınma zamanı karıştığından kısa zaman çizelgesi alıştırması yapılacak. Laptopun harici olması ve robotla kablosuz haberleşme beklentisi kaydedildi; arayüz seçimi açık. Önce bu kavram netleşecek, sonra geçici performans değerlerine geçilecek.
 
+**Alıştırma yanıtı alındı:** Arda 250/450 ms timeout koşullarını doğru yorumladı. Son geçerli komutun 100 ms'de alındığı danışman tarafından açıklandı; Arda bu soruya cevap vermedi. Arayüzdeki tek hedef görevi ile STM32'ye giden güncel hız komutlarının ayrımı açıklandı: hedef/rota/takip ROS 2/Nav2'de, tekerlek kontrolü ve timeout STM32'de. Kişisel kısa rol özeti ve kalan yerleşim notlarıyla mimari adımı kapatılacak.
+
 STM32, ROS 2 bilgisayarı, motor sürücü, motorlar, enkoderler, mesafe sensörü ve güç kaynağı için bloklar çiz. Her okun üzerine “ne taşınıyor?” yaz. Komut, geri besleme ve enerji için ayrı ok biçimi/renk seç.
 
 Kendine sor: Hedef koordinatı ile motor sürme komutu aynı şey mi? Enkoder bana hangi ölçümü verir? Motor enerjisini hangi blok sağlar? Bilgisayardan mesaj gelmezse hangi blok karar vermeli?
@@ -83,6 +85,13 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 - [x] Arda komut kaybında durma sorumluluğunun STM32'de olduğunu belirtti.
 - [x] Arda motor sürücü ile enkoderin temel rol farkını kendi sözleriyle açıkladı.
 - [ ] Arda son geçerli komut süresiyle timeout kontrolünü kendi sözleriyle açıklıyor.
+- [x] Arda 250/450 ms alıştırmasında timeout durumunu doğru yorumladı.
 - [ ] Katkı, süre ve kanıt yolları oturum kaydında.
 
-Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Laptop/robot sınır notları, timeout alıştırması ve ilk sayısal performans hedefleri henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
+Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Timeout alıştırmasının 250/450 ms yorumu alındı. Kısa kişisel görev/komut rol özeti, laptop/robot sınır notları ve ilk sayısal performans hedefleri henüz bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
+
+## Kalan işler: üç kapanış adımı
+
+1. **Mimari ve kısa notlar:** Arda'nın hedef/rota/hız/timeout rol özeti; laptop/robot sınırı ve besleme/haberleşme notları, motor-enkoder mekanik etiketi, operatör/merkez yolu notu. Kısa yazılı notlar yeterli; yeniden tam çizim gerekmiyor.
+2. **Geçici sayısal gereksinimler:** ilk hız, yük ve süre; timeout/fiziksel duruş; V1 toleransları ve başarı eşikleri. Gerekçe ve ölçüm yöntemiyle kayıt.
+3. **Son inceleme ve kayıt:** kısa kapsam, kendi sözleriyle üç akış, kanıt/katkı, gerçek aktif süre ve açık varsayımlar. Kabul karşılanırsa AMR-01 kapanır; donanım seçimi ve robot uygulaması sonraki görevlere aittir.

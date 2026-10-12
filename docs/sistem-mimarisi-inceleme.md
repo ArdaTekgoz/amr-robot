@@ -18,7 +18,9 @@ Harici laptop + kablosuz robot bağlantısı kullanıcının beklediği yerleşi
 
 Motor-enkoder arasındaki ok mekanik dönüş diye etiketlenecek; uygun tipe göre enkoder besleme notu ve blok görevleri tamamlanacak. Şema baştan çizilmek zorunda değil; kısa notlar ve sınır kutuları yeterli. V1 sensörleri V0 için zorunlu donanım değildir.
 
-Şimdiki öğrenme adımı, 13 Ekim oturumundaki kısa zaman çizelgesi alıştırmasıdır. Timeout eşiği henüz proje için seçilmedi; şema veya açıklama fiziksel kabul yerine geçmez.
+13 Ekim zaman çizelgesi alıştırmasında Arda 250/450 ms durumlarını doğru yorumladı; son geçerli komut zamanı olan 100 ms danışman tarafından açıklandı. Sonrasında arayüzden tek hedefin STM32'ye gönderilerek tüm rotanın yürütülmesi gerektiğini sordu. Bu mimaride üst düzey hedef ROS 2/Nav2'ye gider; rota planı ve yol takibine ait hız komutları laptopta üretilir. STM32 hız referanslarını tekerlek kontrolüne dönüştürür, ölçüm/durum geri beslemesi verir ve yerel komut timeout'unu uygular. Tek görev isteği, birçok güncel hız komutuyla yürütülür. Arda'nın kısa kişisel rol özeti hâlâ bekleniyor.
+
+Bu ayrımın kaynakları (erişim 13 Ekim 2026): [Nav2 NavigateToPose](https://docs.nav2.org/jazzy/configuration_and_development/configuration_guide/core_servers/bt_plugins/actions/NavigateToPose/) ve [Controller plugin - velocity commands](https://docs.nav2.org/jazzy/tutorials/plugin_tutorials/writing_new_controller_plugin/writing_new_controller_plugin/). Timeout eşiği henüz proje için seçilmedi; şema veya açıklama fiziksel kabul yerine geçmez.
 
 ## V02 incelemesi ve Arda'nın açıklaması
 
