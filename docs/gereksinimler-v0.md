@@ -4,6 +4,8 @@ Revizyon: 0.1 taslak | 12 Ekim 2026 | Durum: kapsam belirlendi; sayısal hedef v
 
 İlk fiziksel prototip: düz zeminde operatörün telefon veya kumanda üzerinden hareket ettirebildiği diferansiyel sürüşlü platform. Bu teslimat, otonom AMR geliştirmesinin hareket tabanıdır.
 
+İlk [varsayımsal alan çiziminde](test-alani.md) alan 2 × 2 m, robot gövdesi 40 × 40 cm olarak kabul edildi. Bunlar geçici tasarım varsayımlarıdır; nihai şasi/parça seçimi değildir.
+
 | ID | Gereksinim | Doğrulama |
 | --- | --- | --- |
 | V0-01 | Seçilecek tek arayüzden ileri, geri, sağ/sol dönüş ve durma komutları | Tanımlı test alanında her komut için beklenen/gerçek hareket kaydı |

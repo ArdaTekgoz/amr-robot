@@ -14,7 +14,7 @@ Bu proje, tek katlı bir iç mekânda diferansiyel sürüşlü mobil robotla har
 
 Arda'nın kendi problem tanımı altı maddelik kullanım senaryosuyla sunuldu ve [vizyon/kapsam kaydında](vizyon-ve-kapsam.md) anlamı korunarak düzenlendi. Uzun vadede farklı düz zeminli mekânlarda yeniden haritalama, harita arayüzünde base/target seçimi, hedefte bekleme ve dönüş, kapalı yolda alternatif rota, QR ile görev zinciri ve modüler görüntü işleme işlevleri hedeflenir. İlk fiziksel teslimatın asgari kabulü manuel mobil platformdur.
 
-Kapsam ve ölçülebilir hedefler: [V0 gereksinimleri](gereksinimler-v0.md) ve [V1 gereksinimleri](gereksinimler-v1.md). Gerçek test mekânı henüz seçilmedi; varsayımsal simülasyon boyutları fiziksel ölçüm diye sunulmayacaktır. “Her ortama uyum” bütün ortamların doğrulandığı anlamına gelmez; zemin/geometri/sensör koşulları kabul deneyinde sınırlandırılacaktır.
+Kapsam ve ölçülebilir hedefler: [V0 gereksinimleri](gereksinimler-v0.md) ve [V1 gereksinimleri](gereksinimler-v1.md). Gerçek test mekânı henüz seçilmedi. Arda ilk CAD çiziminde 2 × 2 m kare alan, 40 × 40 cm robot ve iki alternatif yol belirledi. [Alan çizimi](test-alani.md) varsayımsal senaryo olarak kaydedildi; fiziksel ölçüm veya geçilebilirlik sonucu değildir. “Her ortama uyum” bütün ortamların doğrulandığı anlamına gelmez; zemin/geometri/sensör koşulları kabul deneyinde sınırlandırılacaktır.
 
 ## 2. Başlangıç durumu ve yöntem
 
@@ -45,6 +45,7 @@ Arda'nın blok şeması ve üç akış açıklaması: **bekleniyor**.
 | 2026-10-12 | V1 temel otonom hedef; QR, periyodik görev ve görüntü işleme sonraki sürüm | Arda'nın aşamalı geliştirme amacı; danışmanın kapsam düzenlemesi | Yol haritasına işlendi |
 | 2026-10-12 | Geçilebilir alternatif yol ile tamamen kapalı yol ayrı deneyler | Yeniden planlamanın hedefe erişimi garanti etmemesi | Sayısal sınırlar bekleniyor |
 | 2026-10-12 | Telefon veya kumandadan tek kontrol arayüzü V0 için yeterli | Arda'nın asgari prototip tanımı | Arayüz seçimi açık |
+| 2026-10-12 | İlk varsayımsal alan 2 × 2 m; robot 40 × 40 cm; iki rota fikri | Arda'nın CAD çizimi ve açıklaması | Tasarım varsayımı; geçilebilirlik doğrulanmadı |
 
 Sayısal hedeflerin gerekçeleri: **Arda yazacak**.
 
@@ -79,7 +80,7 @@ Henüz proje sonucu yoktur. Bu bölüm ancak ölçülmüş sonuçlar ve gereksin
 
 ## 9. Kişisel katkı ve öğrenme
 
-Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk haritalama yöntemini açıkladı; altı maddelik senaryosunda kişisel gelişim/yarışma altyapısı amacını, modüler robot vizyonunu ve manuel ilk prototip beklentisini belirledi. Teknik çizim, sayısal gereksinim ve uygulama henüz sunulmadı.
+Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk haritalama yöntemini açıkladı; altı maddelik senaryosunda kişisel gelişim/yarışma altyapısı amacını, modüler robot vizyonunu ve manuel ilk prototip beklentisini belirledi. 2 × 2 m alan ve 40 × 40 cm robot varsayımıyla iki alternatif rota içeren ilk CAD çizimini oluşturdu. Sistem blok şeması, sayısal performans gereksinimleri ve robot uygulaması henüz sunulmadı.
 
 AI: mevcut raporu inceledi; depo, yol haritası, çalışma sayfaları ve rapor iskeletini hazırladı. Bu hazırlık Arda'nın teknik uygulama kanıtı değildir.
 

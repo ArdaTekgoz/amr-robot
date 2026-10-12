@@ -18,6 +18,8 @@ Arda altı maddelik yanıtını verdi. [Senaryo ve kapsam](../vizyon-ve-kapsam.m
 
 ## 2. Alan ve istasyon çizimi (35 dakika öneri)
 
+**Çizim alındı:** Arda 2 × 2 m kare alan, varsayımsal 40 × 40 cm robot ve iki alternatif rota çizdi. [İlk çizim ve inceleme](../test-alani.md) kayıtlıdır. Alan çizimi kanıtı var; base/target/engel etiketleri, en dar geçiş ve operatör yeri son düzeltme olarak bekleniyor. Rotaların fiziksel geçilebilirliği henüz doğrulanmadı.
+
 Kâğıtta veya tercih ettiğin çizim aracında bir oda, duvarlar, sabit engel ve iki hedef noktası çiz. Eksen yönünü, metre cinsinden boyutları, en dar geçişi ve başlangıç noktasını işaretle. Ölçü yoksa varsayım yaz. A/B bu çizimde kabul deneyi için kullanılacak.
 
 Şimdiki küçük görev: düz zeminli hayalî bir test alanı çiz; yaklaşık boyutlarını, robot başlangıcını, operatörün yerini, base ve target noktalarını, bir engeli ve çevresindeki boşluğu işaretle. “Varsayımsal test alanı” yaz. V0'da engeli operatör görecek ve yönetecek; çizimdeki otonom alternatif rota davranışı V1'e aittir. Boyutlar satın alma kararı değildir.
@@ -60,11 +62,12 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 
 - [x] Kullanım senaryosu ve V0/V1/sonraki sürüm sınırları yazılı.
 - [ ] Kısa kapsam ve sayısal hedefler son incelemeden geçti.
-- [ ] Alan/istasyon çizimi var; varsayım ve ölçüm ayrı.
+- [x] Alan çizimi var; 2 × 2 m alan ve 40 × 40 cm robot varsayım olarak kayıtlı.
+- [ ] Base/target/engel etiketleri, en dar geçiş ve operatör yeri net.
 - [ ] İlk sayısal hedefler, birimler, gerekçeler ve ölçüm yöntemleri kayıtlı.
 - [ ] Simülasyon ve fiziksel kabul için başarı eşikleri açık.
 - [ ] Arda'nın kendi blok şeması var.
 - [ ] Arda komut, geri besleme ve enerji akışını kendi sözleriyle açıklayabiliyor.
 - [ ] Katkı, süre ve kanıt yolları oturum kaydında.
 
-Kanıt hedefi: evidence/AMR-01/ altında alan çizimi ve blok şeması; docs/gereksinimler-v1.md içinde gereksinimler. Henüz bu kanıtlar üretilmedi.
+Mevcut kanıt: evidence/AMR-01/alan-cizimi-v01.png. Arda'nın blok şeması ve ilk sayısal performans hedefleri henüz bekleniyor. AMR-01 tamamlanmadı; çizim bu görevin bir uygulama çıktısı, rapor ise bunun kaydıdır.

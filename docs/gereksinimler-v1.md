@@ -10,7 +10,7 @@ V1 dışı: otonom keşif, QR ile görev zinciri, görüntüyle hedef tanıma, p
 
 ## Çalışma ortamı
 
-Gerçek mekân: seçilmedi. Alan, zemin, en dar geçiş, istasyon mesafesi ve robot boyutu: henüz belirlenmedi. Simülasyon ortamı varsayımları: Arda yazacak.
+Gerçek mekân: seçilmedi. İlk varsayımsal alan 2 × 2 m, robot gövdesi 40 × 40 cm ve zemin düz kabul edildi. Arda iki alternatif rota çizdi; [alan kaydı](test-alani.md) mevcut. En dar geçiş, açık istasyon etiketleri, istasyon mesafesi ve operatör yeri henüz netleştirilecek. Bu değerler donanım boyutlandırma kararı veya fiziksel ölçüm değildir.
 
 ## Gereksinimler ve doğrulama
 
