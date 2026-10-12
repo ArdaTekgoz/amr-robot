@@ -24,10 +24,11 @@ Yöntem: ihtiyacı tanımlama, tasarım/hesap, Arda'nın uygulaması, beklenen-g
 
 ## 3. İlgili çalışmalar ve teknik kaynaklar
 
-Başlangıç kaynağı: ../amr-rapor.pdf, 12 Ekim 2026, 19 sayfa. Yol haritası ve görevler incelendi. Teknik kaynaklar ilgili uygulama görevinde okunup sürüm ve erişim tarihiyle kaydedilecek. Başlangıç PDF'sindeki web kaynaklarının tamamı ayrıca doğrulanmadı; ilk blok şeması incelemesinde aşağıdaki iki resmî kaynak okundu.
+Başlangıç kaynağı: ../amr-rapor.pdf, 12 Ekim 2026, 19 sayfa. Yol haritası ve görevler incelendi. Teknik kaynaklar ilgili uygulama görevinde okunup sürüm ve erişim tarihiyle kaydedilecek. Başlangıç PDF'sindeki web kaynaklarının tamamı ayrıca doğrulanmadı; blok şeması incelemelerinde aşağıdaki üç resmî kaynak okundu.
 
 - [Nav2 Jazzy - Mapping and Localization](https://docs.nav2.org/jazzy/configuration_and_development/first_time_robot_setup_guide/sensors/mapping_localization/), erişim 12 Ekim 2026: LaserScan tabanlı haritalama/konumlanma ve yardımcı range verisinin ayrımı.
 - [SLAM Toolbox resmî deposu](https://github.com/SteveMacenski/slam_toolbox), erişim 12 Ekim 2026: LaserScan girişi. Bu kontrol kurulu ROS sürümünün doğrulandığı anlamına gelmez.
+- [ROS 2 Control Jazzy - diff_drive_controller](https://control.ros.org/jazzy/doc/ros2_controllers/diff_drive_controller/doc/userdoc.html), erişim 12 Ekim 2026: komut zaman aşımı ve eskimiş komut kavramı; kontrolcü seçimi veya proje timeout değeri değildir.
 
 Kaynak kayıt biçimi: başlık, üretici/yazar, sürüm, URL, erişim tarihi, projede desteklediği karar. Literatür değerlendirmesi henüz yapılmadı.
 
@@ -35,7 +36,9 @@ Kaynak kayıt biçimi: başlık, üretici/yazar, sürüm, URL, erişim tarihi, p
 
 Üst düzey rol ayrımı: STM32 PWM, enkoder okuma, sabit periyotlu hız kontrolü ve komut zaman aşımını; ROS 2 bilgisayarı odometri, TF, SLAM, konumlanma, navigasyon ve görev yönetimini üstlenecek. Motor sürücü, kontrol sinyalini motor gücüne aktaracak. Ayrıntılı arayüz henüz tasarlanmadı.
 
-Arda'nın ilk [blok şeması ve incelemesi](sistem-mimarisi-inceleme.md) kaydedildi. Gamepad/ROS 2 PC/STM32 yolu, iki sürücü-motor-enkoder grubu ve dört mesafe sensörü aday mimari olarak gösterildi. Komut oklarının yönü, sürücü-motor enerji yolu ve güç dağıtımı düzeltilmeli; veri/enerji etiketleri ile kişisel açıklama henüz bekleniyor. Dört köşe sensörü, başlangıç planının haritalama sensörü yerine kabul edilmedi.
+Arda'nın V01 ve V02 [blok şemaları ve incelemesi](sistem-mimarisi-inceleme.md) kaydedildi. Gamepad/ROS 2 PC/STM32 yolu, iki sürücü-motor-enkoder grubu ve dört mesafe sensörü aday mimari olarak gösterildi. V02'de STM32-sürücü kontrol yönleri, PC komut/telemetri etiketleri ve renkli güç dağıtımı iyileştirildi; ayrı haritalama aygıtı eklendi. Haritalama verisinin PC'ye aktarımı, sürücü-motor enerji oku, motor-enkoder mekanik ilişkisinin etiketi ve bazı güç/veri notları hâlâ düzeltilmeli. Dört köşe sensörü haritalama sensörü yerine kabul edilmedi.
+
+Arda komut kesildiğinde durma sorumluluğunu STM32'ye verdi ve bağlantı bayrağına dayalı sözde kod önerdi. Danışman, bağlantı açık kalırken de komutun kesilebileceğini ve son geçerli komuttan beri geçen sürenin STM32'de izlenmesi gerektiğini açıkladı. Timeout eşiği, tekrar başlatma davranışı ve fiziksel duruş süresi henüz seçilmedi veya denenmedi. Yazılımsal komut timeout'u, fiziksel motor enerjisi kesme yolundan ayrı tutulur.
 
 ### Karar kaydı
 
@@ -51,6 +54,7 @@ Arda'nın ilk [blok şeması ve incelemesi](sistem-mimarisi-inceleme.md) kaydedi
 | 2026-10-12 | İlk varsayımsal alan 2 × 2 m; robot 40 × 40 cm; iki rota fikri | Arda'nın CAD çizimi ve açıklaması | Tasarım varsayımı; geçilebilirlik doğrulanmadı |
 | 2026-10-12 | V02'de istasyon/engel etiketleri; 250 mm merkez-yüzey açıklıkları | Arda'nın revize CAD çizimi | Düz duruşta nominal gövde açıklığı 50 mm; dönüş doğrulaması sonraki görevlerde |
 | 2026-10-12 | Gamepad/ROS 2 PC/STM32 yolu ve dört köşe sensörü aday mimari | Arda'nın ilk sistem blok şeması | Akış revizyonu ve sensör işlevlerinin ayrımı bekleniyor; parça seçimi değil |
+| 2026-10-12 | Komut kesilmesinde durma kararının STM32'de olması | Arda'nın kişisel açıklaması | Son geçerli komut yaşını izleme kuralı ve eşik henüz tamamlanmadı |
 
 Sayısal hedeflerin gerekçeleri: **Arda yazacak**.
 
@@ -88,6 +92,8 @@ Henüz proje sonucu yoktur. Bu bölüm ancak ölçülmüş sonuçlar ve gereksin
 Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk haritalama yöntemini açıkladı; altı maddelik senaryosunda kişisel gelişim/yarışma altyapısı amacını, modüler robot vizyonunu ve manuel ilk prototip beklentisini belirledi. 2 × 2 m alan ve 40 × 40 cm robot varsayımıyla iki alternatif rota içeren ilk CAD çizimini oluşturdu. İlk sistem blok şemasını da çizdi; bu şemanın revizyonu ve kişisel akış açıklamaları, sayısal performans gereksinimleri ve robot uygulaması henüz bekleniyor.
 
 Arda ayrıca V02 çiziminde BASE / ROBOT, TARGET ROBOT ve ENGEL etiketleri ile yol merkezi açıklıklarını ekledi. Bu çizim alan tanımı kanıtıdır. Dönüşlerde kare gövdenin kapladığı alanın kontrolü ve rotaların uygulanması henüz yapılmadı.
+
+Blok şemasının V02 revizyonunda renk anahtarı, kontrol yönleri, PC komut/telemetri etiketleri, güç dalları ve haritalama bloğunu ekledi. Komut kaybında STM32'nin durmayı yönetmesi gerektiğini kendi sözleriyle belirtti; zaman aşımının tespit yöntemi henüz revize edilecek.
 
 AI: mevcut raporu inceledi; depo, yol haritası, çalışma sayfaları ve rapor iskeletini hazırladı. Bu hazırlık Arda'nın teknik uygulama kanıtı değildir.
 

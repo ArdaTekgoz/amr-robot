@@ -1,8 +1,45 @@
 # AMR-01 - İlk sistem blok şeması incelemesi
 
-Tarih: 12 Ekim 2026. Şemayı çizen: Arda. İnceleme ve açıklama desteği: AI. Durum: ilk taslak alındı; yönler, akış etiketleri ve güç dağıtımı düzeltilecek. Bu belge bitmiş tasarım veya devre bağlantı şeması değildir.
+Tarih: 12 Ekim 2026. Şemayı çizen: Arda. İnceleme ve açıklama desteği: AI. Durum: V02 revizyonu alındı; kalan akış düzeltmeleri ve kişisel açıklamalar bekleniyor. Bu belge bitmiş tasarım veya devre bağlantı şeması değildir.
 
 ![Arda'nın ilk blok şeması](../evidence/AMR-01/blok-semasi-v01.png)
+
+![Arda'nın revize blok şeması](../evidence/AMR-01/blok-semasi-v02.png)
+
+## V02 incelemesi ve Arda'nın açıklaması
+
+Arda haberleşmeyi yeşil, gücü kırmızı ve sinyali mavi gösterdi. Gamepad okunu tek yöne çevirdi; STM32 → sürücü kontrol yönlerini düzeltti; ROS 2 ↔ STM32 komut ve telemetrisini ayrı etiketledi. Güç dağıtım dalları ve ayrı haritalama aygıtı bloğu eklendi. Bu iyileştirmeler kişisel tasarım katkısı olarak kaydedildi.
+
+Arda'nın açıklaması: “ROS 2 Bilgisayarı komut göndermeyi keserse robotun durmasına stm32 verir. İf ros2connection = 0 emergencystop=1”. Bu sözde koddur; derlenmiş veya denenmiş firmware değildir. Durma kararının STM32'de olması doğru sorumluluk seçimi; bağlantı kaybının hangi ölçütle belirlendiği henüz açıklanmadı.
+
+### Komut zaman aşımı için danışman açıklaması
+
+Fiziksel bağlantı açık kalabilirken ROS süreci komut üretmeyi bırakabilir. Bu yüzden bağlantı durum bayrağı tek başına yeterli değildir. STM32, kendi zaman kaynağıyla son kabul edilen geçerli ve güncel komuttan beri geçen süreyi izlemelidir. Bu süre seçilecek eşiği aşınca iki tekerlek hız referansı sıfırlanır ve komut zaman aşımı durumu kaydedilir. Bozuk/eski paketler veya yalnızca bir bayt gelmesi bu süreyi sıfırlamamalıdır. Protokol, tekrar başlatma davranışı ve çıkış/duruş ayrıntıları AMR-17/18'de uygulanacaktır.
+
+Bugünkü öğrenme çıktısı firmware yazmak değil, bu davranışı ölçülebilir gereksinime dönüştürmektir. Eşik henüz seçilmedi; sıfır referansın verildiği an ile motorun fiziksel olarak durduğu an ayrı ölçülecek. Arda'nın `emergencystop` adı burada yazılımsal timeout duruşunu ifade eder; fiziksel motor enerjisi kesme yolunun yerine geçmez.
+
+ROS 2 Control Jazzy diff_drive_controller belgesinde de komut eskimesi için timeout ve otomatik durma açıklanır. Bu yalnız kavramsal referanstır; bu projede söz konusu kontrolcü seçilmiş veya STM32 tarafındaki koruma uygulanmış değildir. Belgedeki varsayılan süre proje için seçilmiş eşik sayılmaz.
+
+### V02'de kalan düzeltmeler
+
+| Bölüm | Düzeltme |
+| --- | --- |
+| Haritalama aygıtı → STM32 | Bu projenin planlanan haritalama akışında veri uygun arayüzle ROS 2 bilgisayarına ulaştırılmalı. Şemada haritalama veri okunu PC'ye yönelt; fiziksel arayüz/model sonra seçilecek. |
+| Sürücü → motor mavi ok | Bu bağlantı motorun sürülen elektriksel enerjisidir; kırmızı göster. STM32 → sürücü PWM/yön kontrol sinyali mavi kalır. |
+| Motor → enkoder mavi ok | Ölçülen mil/tekerlek dönüşü mekanik ilişkidir; “mekanik dönüş” diye etiketle veya ayrı kesikli çizgi kullan. Enkoder → STM32 ölçüm sinyali mavi kalır. |
+| Sol ön sensör → STM32 kırmızı ok | Mesafe ölçümünü taşıyorsa mavi olmalı. Sensörün besleme girişi güç kaynağı/dağıtımından ayrıca kırmızı gösterilir. |
+| PC ve enkoder beslemeleri | Bilgisayarın kendi beslemesi veya robot güç dağıtımı seçeneği gösterilmeli. Enkoder besleme ihtiyacı seçilecek tipe göre ayrıca değerlendirilmeli. Besleme gerilimi/parça henüz seçilmez. |
+| Görevler ve veri adları | Blok görev cümleleri; PWM/yön, enkoder sayımı, mesafe ve tarama verisi gibi ok etiketleri tamamlanmalı. |
+
+Köşe mesafe sensörleri yardımcı aday, haritalama aygıtı V1 bloğudur. Sensör modelleri, bilgisayar konumu ve bağlantı yöntemi henüz kesinleşmedi.
+
+### Bir sonraki küçük uygulama
+
+Arda, V02 üzerindeki kısa akış düzeltmelerini yapacak; ardından kendi sözleriyle son geçerli komut zamanını nasıl güncelleyeceğini ve komut kesildiğinde neyi kontrol edeceğini açıklayacak. Ayrıca motor sürücü ve enkoderin görevlerini birer cümle yazacak. Henüz kodlama veya fiziksel test yapılmayacak; sonra AMR-01'in sayısal hedefler adımına geçilecek.
+
+Ek kaynak (erişim 12 Ekim 2026): [ROS 2 Control Jazzy - diff_drive_controller](https://control.ros.org/jazzy/doc/ros2_controllers/diff_drive_controller/doc/userdoc.html), command timeout ve eskimiş komut açıklaması.
+
+## İlk taslak inceleme kaydı (V01)
 
 ## Arda'nın önerisi
 
@@ -48,4 +85,4 @@ Mevcut şemayı düzelt; AI tarafından hazırlanmış yeni bir şema kopyalamak
 5. Köşe sensörlerini yardımcı aday, haritalama sensörünü V1 bloğu olarak ayır. V0'a zorunlu sensör kabulü ekleme.
 6. Her bloğa bir cümle görev yaz. Özellikle STM32'nin periyodik motor kontrolü ve komut kaybında durma sorumluluğunu belirt.
 
-Kendi sözlerinle açıklama: STM32 neden motor sürücüye ihtiyaç duyar? Enkoder nasıl geri besleme sağlar? ROS bilgisayarı mesaj göndermeyi bırakırsa hangi blok hangi davranışı uygulamalıdır? Bu cevaplar henüz alınmadı.
+Kendi sözlerinle açıklama: STM32 neden motor sürücüye ihtiyaç duyar? Enkoder nasıl geri besleme sağlar? ROS bilgisayarı mesaj göndermeyi bırakırsa hangi blok hangi davranışı uygulamalıdır? V02 ile durma sorumluluğu cevabı alındı; son geçerli komut süresi açıklaması ve diğer iki cevap henüz bekleniyor.
