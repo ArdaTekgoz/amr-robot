@@ -18,7 +18,7 @@ AMR-20'de V0 şasi/güç ve gereken kontrol bağlantısı önce kurulabilir. Kay
 
 | Görev | İş | Ön koşul | Tahmin (saat) | Durum |
 | --- | --- | --- | ---: | --- |
-| AMR-01 | Görev tanımı ve sistem sınırları | Başlangıç | 4 | Devam ediyor |
+| AMR-01 | Görev tanımı ve sistem sınırları | Başlangıç | 4 | Tamamlandı, 13 Ekim 2026 |
 | AMR-02 | ROS 2 ve Gazebo ortamı | 01 | 8 | Başlanmadı |
 | AMR-03 | Kendi ROS düğümü | 02 | 8 | Başlanmadı |
 | AMR-04 | Diferansiyel sürüş hesabı | 03 | 6 | Başlanmadı |
@@ -49,6 +49,8 @@ AMR-20'de V0 şasi/güç ve gereken kontrol bağlantısı önce kurulabilir. Kay
 | AMR-29 | Ollama sınırlı görev arayüzü | 24 | 10 | Sonraki sürüm |
 
 01 tamamlanınca ortam kolu (02) ve donanım bütçesi kolu (12) açılır. Donanım alımı, simülasyon v1'in bitmesini beklemek zorunda değildir; donanım beklenirse simülasyonda ön koşulu uygun göreve geçilir.
+
+AMR-01 kapsam kabulü 13 Ekim'de tamamlandı; kullanıcı aktif süre tahmini yaklaşık 3 saat. Sıradaki önerilen oturum AMR-02 mevcut Docker/ROS 2 ortamını kaydetme/doğrulama. AMR-12 bütçe kolu da açıldı. Rampalar AMR-16, komut kaybı/duruş AMR-17, boş/yüklü fiziksel kalibrasyon AMR-21 ve otonom duruş davranışı AMR-23'te ölçülecek.
 
 ## Kabul kapıları
 

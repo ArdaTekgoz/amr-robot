@@ -15,6 +15,7 @@ Revizyon: 0.2 taslak | Güncelleme: 13 Ekim 2026 | Durum: ilk hız/yük/süre he
 | V0-05 | 5 kg hedef faydalı yükle, nominal hız bandında tanımlı gidiş-dönüş çevrimi ve ilgili robot sensörleri açıkken en az 30 dakika | Yük, rota, hareket/bekleme oranı, elektronik konfigürasyonu ve robot batarya enerji/süre kaydı. Çevrim ayrıntısı henüz yazılacak |
 | V0-06 | Motor enerjisini fiziksel olarak kesebilme; kablo/güç düzeninin doğrulanması | AMR-20 güç kontrolü ve enerjiyi kesme deneyi |
 | V0-07 | Ölçülen tekerlek kontrolü ve odometri kalibrasyonu | AMR-19 ve AMR-21 sonuçları; otonom navigasyon gerektirmez |
+| V0-08 | Normal manuel sürüşte sınırlı hızlanma/yavaşlama rampası; bağlantı kaybında ayrı öncelikli duruş | AMR-16 referans/ölçüm grafiği; AMR-17 timeout; AMR-21 boş/yüklü zeminde duruş süre/mesafesi. Sayısal profil henüz seçilmedi |
 
 Başlangıç kontrol tercihi gamepad'dir. Modeli/haberleşme yöntemi, açısal hız, fiziksel duruş eşiği ve tekrar sayısı henüz seçilmedi. İlk doğrusal hız/yük/süre hedefleri Arda tarafından gerekçelendirildi. 20 Hz/250 ms timeout danışman başlangıç varsayımıdır; kullanıcı ölçümü veya resmî varsayılan diye sunulmaz. Donanımda hiçbir hedef denenmedi. Fiziksel duruş sınırı AMR-12'de motor/sürücü kararıyla, komut/çıkış davranışı AMR-17/18'de doğrulanacak. V0-07 öğrenme hedefleriyle mevcut görev bağımlılıklarını korur. Gereksinimler ölçülmeden V0 tamamlandı denmez.
 

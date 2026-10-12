@@ -1,6 +1,6 @@
 # AMR v1 - Gereksinim çalışma sayfası
 
-Revizyon: 0.5 taslak | Güncelleme: 13 Ekim 2026 | Durum: ilk hedefler ve başarı eşikleri kaydedildi; timeout başlangıç varsayımı danışman önerisidir, son AMR-01 kontrolü açık. İlk fiziksel ara teslimat için [V0 gereksinimleri](gereksinimler-v0.md) kullanılır.
+Revizyon: 1.0 başlangıç kapsamı | 13 Ekim 2026 | Durum: AMR-01 kapsam kabulü yapıldı; teknik varsayımlar ilgili görevlerde doğrulanacak. Timeout danışman başlangıç varsayımıdır. İlk fiziksel ara teslimat için [V0 gereksinimleri](gereksinimler-v0.md) kullanılır.
 
 ## Amaç ve kapsam
 
@@ -32,6 +32,7 @@ Boş alanlar eksik karardır; varsayılan başarı değeri değildir. SIM ve Fİ
 | R-12 | Harita arayüzünden base/target seçme; açık başlatmayla target'a gitme, ... s bekleme ve base'e dönme | Temel görev dizisi hedefi; ayrıntı seçilecek | SIM/FİZ: gidiş, bekleme, dönüş ve iptal kayıtları; otomatik periyodik başlatma dahil değil |
 | R-13 | Yakın mesafe algılama tarafından algılanan, haritada önceden bulunmayan engelde yerel durma davranışı; geçerli hız isteğini engel durumunda geçersiz kılma | Kullanıcı talebi; algılama kapsaması, eşik, filtre, duruş ve tekrar hareket koşulu seçilecek | FİZ: sensör görüşünde yeni engel; algılama anı, sıfır referans, duruş süresi/mesafesi ve durum bildirimi. Rota alternatifi ayrı R-11 deneyi |
 | R-14 | Komut kabulü, hareket ve hedefe varış için sesli ve LED durum bildirimi | Kullanıcı talebi; desen, zamanlama ve “komut” olayının görev/hız mesajı ayrımı henüz netleştirilecek | FİZ: tanımlı olay-durum tablosu, ses/LED gözlemi ve kayıt; hedefe varış ROS tarafında doğrulanacak |
+| R-15 | Normal sürüşte hızlanma/yavaşlama referans rampaları; komut kaybı ve yakın engelde öncelikli, ayrıca tanımlanmış duruş davranışı | Kullanıcının profesyonel AMR gözlemine bağlı beklenti; rampanın uygulanması kaynak planda AMR-16'da var. Sayısal ivme/frenleme limitleri motor/sürücü ve ölçümle seçilecek | SIM/FİZ: referans/gerçek hız grafikleri; boş ve hedef yükte normal durma, gamepad bırakma, iptal, timeout ve algılanan yakın engelde duruş süre/mesafesi |
 
 R-08'de “başarı” tanımı: doğru hedef + R-07 konum/yön toleransı + tanımlı süre sınırı + müdahalesiz, çarpışmasız normal tamamlanma. Görev başına süre sınırı ve kesin rota/çevrim AMR-10/11'de sabit deneyden önce yazılacak. İptal/komut kaybı/yakın engelde durma için ayrı gereksinimler de geçmelidir; 8/10 veya 6/10 yalnız normal navigasyon görevlerinin oranıdır. R-09 timeout ile mekanik duruş süresi aynı büyüklük değildir.
 

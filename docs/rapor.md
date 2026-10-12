@@ -120,7 +120,9 @@ AI: mevcut raporu inceledi; depo, yol haritası, çalışma sayfaları ve rapor 
 
 Her görevde Arda'nın kendi açıklaması ve öğrendiği konu [oturum kaydında](oturumlar/2026-10-12-AMR-01.md) tutulacak.
 
-AMR-01 için toplam aktif çalışma yaklaşık 3 saat olarak Arda tarafından beyan edildi; saat birimi ayrıca teyit edildi. Günlük dağılım veya kronometre ölçümü bulunmadığından tahmin olarak raporlandı. [Kısa kapsam özeti](kapsam-ozeti.md) hazır; son kişisel timeout açıklaması ve akış/kayıt incelemesi bekleniyor.
+AMR-01 için toplam aktif çalışma yaklaşık 3 saat olarak Arda tarafından beyan edildi; saat birimi ayrıca teyit edildi. Günlük dağılım veya kronometre ölçümü bulunmadığından tahmin olarak raporlandı. Son kişisel timeout açıklaması alındı: kullanıcı kısa eşiğin gereksiz durma, uzun eşiğin eski komutla hareketin sürmesi sorunlarını açıkladı. Yeni komut hiç gelmese de timeout dolunca STM32'nin duracağı düzeltmesi kaydedildi. [Kısa kapsam özeti](kapsam-ozeti.md), kullanıcı çizimleri ve yazılı danışman düzeltmeleri birlikte incelendi; AMR-01 kapsam/öğrenme kabulü 13 Ekim 2026'da tamamlandı. Bu, robot performansı veya donanım kabulü değildir.
+
+Arda profesyonel AMR kullanımında kısa manuel duruş ve otonom hızlanma/fren rampası gözlemlediğini belirtti. Normal referans rampaları zaten kaynak planda AMR-16'dadır; R-15/V0-08 ile koşulları ve boş/yüklü duruş testleri açık yazıldı. Komut kaybı/yakın engelde normal konfor rampasından ayrı öncelikli duruş tanımlanacak; sürücünün boşa alma/frenleme modları ve fiziksel süre/mesafe motor/sürücü/zemin/yükle ölçülecek. Kullanılan profesyonel robotun modeli veya fren donanımı varsayılmadı. [Nav2 Velocity Smoother](https://docs.nav2.org/jazzy/configuration_and_development/configuration_guide/core_servers/configuring_velocity_smoother/) ve [TI H-bridge eğitimi](https://www.ti.com/video/6059539558001) 13 Ekim 2026'da referans olarak incelendi; varsayılan ivme veya belirli bir sürücü robot için seçilmedi.
 
 ## Ekler
 

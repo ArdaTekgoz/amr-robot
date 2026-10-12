@@ -10,7 +10,8 @@ Ardından **V1: temel otonom AMR** geliştirilecektir. Haritalama sırasında ro
 
 ## Mevcut durum
 
-- Aktif görev: **AMR-01 - Görev tanımı ve sistem sınırları**; durum: son kapanış kontrolü bekleniyor. Kullanıcının aktif süre tahmini yaklaşık 3 saat.
+- **AMR-01 tamamlandı**, 13 Ekim 2026: kapsam/öğrenme kabulü. Kullanıcının aktif süre tahmini yaklaşık 3 saat.
+- Sıradaki görev: **AMR-02 - Mevcut Docker/ROS 2 ortamını kaydetme ve doğrulama**; başlanmadı. AMR-12 donanım bütçesi kolu da açıldı.
 - ROS 2 daha önce Docker üzerinden kurulmuş; sürüm ve çalışır durum AMR-02'de doğrulanacak.
 - Harici laptop ve kablosuz robot bağlantısı başlangıç adayı; robot tarafı haberleşme birimi/protokol henüz seçilmedi.
 - STM32 Nucleo alınması planlanıyor; model seçilmedi. Motor, enkoder, sürücü ve sensör mevcut değil.

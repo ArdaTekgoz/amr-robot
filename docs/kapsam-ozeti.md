@@ -1,6 +1,6 @@
 # AMR - İlk kapsam ve kabul özeti
 
-13 Ekim 2026 | AMR-01 son inceleme taslağı | Arda TEKGÖZ
+13 Ekim 2026 | AMR-01 başlangıç kapsamı, revizyon 1.0 | Arda TEKGÖZ
 
 ## Amaç ve teslimatlar
 
@@ -14,7 +14,11 @@ Kişisel mühendislik yetkinlikleri ve ileride yarışma altyapısı için, düz
 
 İlk varsayımsal alan 2 × 2 m; gövde 40 × 40 cm; iki rota fikri. Gerçek alan seçilmedi. Dönüş açıklığı, hedeflerin duvara uzaklığı ve sensör kapsaması sonraki model/deneylerde doğrulanacak.
 
+Çalışma tanımı: kesikli yollar robot merkezinin yolu; operatör test alanının dışında gamepad ile gözlem yapar. Bu yerleşim danışman tarafından eklenen tasarım varsayımıdır; gerçekleşmiş saha gözlemi değildir.
+
 Harici laptop kendi beslemesiyle ROS 2/Nav2 haritalama, konumlanma, rota ve güncel hız komutlarını yürütür. Robotta kablosuz arayüz aday; STM32 sürücüleri kontrol eder, enkoder/mesafe geri beslemesini işler, komut timeout'unu uygular. Motor enerjisi sürücüden motora gider. Model, protokol ve gerilim dağıtımı henüz seçilmedi.
+
+Normal harekette hızlanma/yavaşlama rampası; komut kaybı veya algılanan yakın engelde ayrı öncelikli duruş profili tanımlanacak. Referansı sıfırlama, boşa alma ve fiziksel frenleme aynı işlem sayılmaz; motor/sürücü ve ölçümle netleşecek.
 
 ## Geçici hedefler ve doğrulama
 
@@ -33,4 +37,4 @@ Harici laptop kendi beslemesiyle ROS 2/Nav2 haritalama, konumlanma, rota ve gün
 
 AMR-12: motor/enkoder/sürücü, 12 V motor adayı, pil kapasitesi, uygun beslemeler, fiziksel duruş sınırı ve kablolu şarj. AMR-04/06/16: açısal sınırlar ve kontrol periyotları. AMR-10/11/23: sabit rota/çevrim, görev süresi, engel/yeniden başlama ve bildirim ayrıntıları. Testten önce ilgili koşullar dondurulur.
 
-Kanıtlar: [alan](test-alani.md), [kişisel blok şemaları ve inceleme](sistem-mimarisi-inceleme.md), [13 Ekim oturumu](oturumlar/2026-10-13-AMR-01.md). Toplam aktif süre: **yaklaşık 3 saat, kullanıcı tahmini**; günlere ayrılmış ölçüm yok. Robot deneyi yapılmadı. AMR-01 son kişisel açıklama ve kayıt incelemesi bekliyor.
+Kanıtlar: [alan](test-alani.md), [kişisel blok şemaları ve yazılı düzeltme notları](sistem-mimarisi-inceleme.md), [13 Ekim oturumu](oturumlar/2026-10-13-AMR-01.md). Toplam aktif süre: **yaklaşık 3 saat, kullanıcı tahmini**; günlere ayrılmış ölçüm yok. AMR-01 kapsam/öğrenme kabulü 13 Ekim'de yapıldı. Robot ve donanım performansı henüz denenmedi; ilgili kabuller açık.

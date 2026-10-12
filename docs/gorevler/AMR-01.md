@@ -1,6 +1,6 @@
 # AMR-01 - Görev tanımı ve sistem sınırları
 
-Başlangıç: 12 Ekim 2026. Tahmin: 4 saat. Toplam aktif süre: yaklaşık 3 saat, kullanıcı tahmini. Durum: son kapanış kontrolü bekleniyor. Donanım gerekmez.
+Başlangıç: 12 Ekim 2026. Tamamlanma: 13 Ekim 2026. Tahmin: 4 saat. Toplam aktif süre: yaklaşık 3 saat, kullanıcı tahmini. Durum: kapsam/öğrenme kabulü tamamlandı. Donanım gerekmez. Aşağıdaki ara çalışma notları tarihsel kayıttır; kapanış özeti esas alınır.
 
 Son oturum: [13 Ekim 2026](../oturumlar/2026-10-13-AMR-01.md). Bu görev birkaç oturuma yayıldı; tamamlanma tarihinden bağımsız olarak kanıtla değerlendirilecek.
 
@@ -81,25 +81,25 @@ Kalan 30 dakika ilk tahminde ara/tekrar payıdır; süreler gerçekleşmiş çal
 ## Tamamlanma kontrolü
 
 - [x] Kullanım senaryosu ve V0/V1/sonraki sürüm sınırları yazılı.
-- [ ] Kısa kapsam ve sayısal hedefler son incelemeden geçti.
+- [x] Kısa kapsam ve sayısal hedefler son incelemeden geçti; teknik varsayımlar ilgili görev kapılarına bağlandı.
 - [x] Alan çizimi var; 2 × 2 m alan ve 40 × 40 cm robot varsayım olarak kayıtlı.
 - [x] Base/target/engel etiketleri ve gösterilen dar geçiş açıklıkları kayıtlı.
-- [ ] Operatör yeri ve kesikli hatların merkez yolu olduğu notu net.
+- [x] Operatörün alan dışı olması ve kesikli hatların merkez yolu olduğu çalışma varsayımı yazılı; gerçekleşmiş deney değildir.
 - [x] İlk sayısal hedefler, birimler, gerekçeler ve temel ölçüm yöntemleri kayıtlı; açık teknik kararlar ilgili görevlere bağlandı.
 - [x] İlk doğrusal hız, faydalı yük ve çalışma süresi hedefleri gerekçeyle kaydedildi.
 - [x] Simülasyon ve fiziksel kabul için başarı eşikleri açık: SIM ≥8/10, FİZ ≥6/10 normal görev.
 - [x] Arda'nın kendi ilk blok şeması var.
 - [x] Arda haritalamadan hedefe harekete kadar kişisel senaryo açıklamasını sundu.
-- [ ] Blok şemasında komut, geri besleme ve enerji yönleri/etiketleri incelemeden geçti.
-- [ ] Arda komut, geri besleme ve enerji akışını kendi sözleriyle açıklayabiliyor.
+- [x] Kullanıcı V03 blok şeması, yazılı danışman düzeltmeleriyle komut/geri besleme/enerji incelemesinden geçti; orijinal görsel korunuyor.
+- [x] Arda komut, geri besleme ve enerji rollerini kendi senaryosu, çizimleri ve görev açıklamalarıyla ifade etti; danışman düzeltmeleri ayrıca kayıtlı.
 - [x] Arda komut kaybında durma sorumluluğunun STM32'de olduğunu belirtti.
 - [x] Arda motor sürücü ile enkoderin temel rol farkını kendi sözleriyle açıkladı.
-- [ ] Arda son geçerli komut süresiyle timeout kontrolünü kendi sözleriyle açıklıyor.
+- [x] Arda kısa/uzun timeout etkisini kendi sözleriyle açıkladı; yeni komut hiç gelmese de timeout dolunca duruş başlayacağı netleştirildi.
 - [x] Arda 250/450 ms alıştırmasında timeout durumunu doğru yorumladı.
-- [ ] Katkı, süre ve kanıt yolları oturum kaydında.
+- [x] Katkı, yaklaşık kullanıcı süre tahmini ve kanıt yolları oturum kaydında.
 
-Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Sayısal başlangıç hedefleri, kapsam taslağı ve yaklaşık aktif süre kaydı hazır. Son timeout açıklaması ve küçük akış/yerleşim notlarının kapanış kontrolü bekleniyor. AMR-01 tamamlanmadı; çizimler bu görevin uygulama çıktıları, rapor ise bunların kaydıdır.
+Mevcut kanıt: evidence/AMR-01/ altında alan-cizimi-v01/v02.png ve blok-semasi-v01/v02/v03.png dosyaları; ayrıntılı yollar [inceleme kaydında](../sistem-mimarisi-inceleme.md). Sayısal başlangıç hedefleri, kapsam özeti, kullanıcı açıklamaları ve yaklaşık süre kaydı son incelemeden geçti. AMR-01 kapsam/öğrenme kabulü tamamlandı. Robot veya donanım performansı kabul edilmedi; bunlar sonraki görevlerdir.
 
-## Kalan iş: son kapanış kontrolü
+## Kapanış - 13 Ekim 2026
 
-[Kapsam özeti](../kapsam-ozeti.md) ve üç akışın son kontrolü; kısa laptop/robot besleme/haberleşme/mekanik ve alan notları; kullanıcı tahmini süre/katkı kaydı. Arda timeout çok kısa veya çok uzun seçilirse ne olacağını kendi sözleriyle açıklayacak. Açık teknik seçimler ve deney koşulları görev kapılarına bağlı kayıtlı; robot uygulaması AMR-01'in koşulu değildir. Son ölçütler sağlanmadan görev tamamlandı işaretlenmez.
+[Kapsam özeti](../kapsam-ozeti.md), kullanıcı çizimleri/açıklamaları ve yazılı düzeltmeler birlikte incelendi. Son kişisel timeout açıklaması alındı; normal hareket rampası ve öncelikli duruş ihtiyacı AMR-16/17/21/23'e bağlandı. AMR-01 tamamlandı. Sonraki çalışma AMR-02 mevcut Docker/ROS 2 ortamını kaydetme/doğrulamadır; AMR-12 bütçe kolunun ön koşulu da açıldı. Açık teknik seçimler sonraki görevlerin parçasıdır.

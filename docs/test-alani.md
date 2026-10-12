@@ -34,3 +34,7 @@ Bu aşamada ayrıntılı rota doğrulaması yapılmayacak. AMR-01 çıktısı, a
 - Base/target bağlantıları ve dönüşte gövde taraması, sonraki model/rota incelemesinde ele alınacak; bugün ayrıntılı rota optimizasyonu gerekmiyor.
 
 Şimdiki uygulama AMR-01'in sistem sorumlulukları ve üç akış blok şemasıdır. Çizim, robotun iki rotayı başarıyla izlediğine dair kanıt değildir.
+
+## AMR-01 kapanış notu - 13 Ekim
+
+Kapsam çalışma tanımında kesikli hatlar robot merkezi yolu, çizim ölçüleri mm, alan varsayımsal olarak yazıldı. Operatörün gamepad ile alan dışından gözlem yapması danışman tasarım varsayımı olarak eklendi; kullanıcı çizimine veya gerçekleşmiş deneyine eklenmiş gibi sunulmadı. Orijinal çizimler korunmuştur. Rotanın dönüş/duvar açıklığı ve hedef konumu doğrulaması AMR-05/10'a taşınmıştır. Alan tanımı AMR-01 kapsamında kabul edildi; fiziksel geçilebilirlik kabulü yapılmadı.

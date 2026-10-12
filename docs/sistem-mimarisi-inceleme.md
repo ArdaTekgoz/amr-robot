@@ -1,6 +1,21 @@
 # AMR-01 - İlk sistem blok şeması incelemesi
 
-Başlangıç: 12 Ekim 2026. Güncelleme: 13 Ekim 2026. Şemayı çizen: Arda. İnceleme ve açıklama desteği: AI. Durum: V03 revizyonu ve kişisel cevaplar alındı; timeout anlayışı ve harici laptop yerleşimi netleştiriliyor. Bu belge bitmiş tasarım veya devre bağlantı şeması değildir.
+Başlangıç: 12 Ekim 2026. Güncelleme: 13 Ekim 2026. Şemayı çizen: Arda. İnceleme ve açıklama desteği: AI. Durum: V03 ve yazılı düzeltme notlarıyla AMR-01 kapsam mimarisi kabul edildi. Fiziksel arayüz/devre henüz seçilmedi; bu belge devre bağlantı şeması değildir. Aşağıdaki ara incelemelerin bekleyen ifadeleri tarihsel kayıttır; güncel kapanış notu esas alınır.
+
+## AMR-01 kapanış değerlendirmesi
+
+Arda'nın kendi alan/blok çizimleri, motor sürücü ve enkoder görev açıklamaları, haritalamadan harekete kişisel senaryosu, hız/yük/süre/tolerans/başarı seçimleri ve timeout'un kısa/uzun olmasının etkisi birlikte değerlendirildi. Öğrenme açıklamasındaki son düzeltme: hiç yeni komut gelmezse robot yeni komutu süresiz beklemez; timeout dolunca STM32 duruşu başlatır.
+
+Şema V03 orijinal haliyle korunuyor. AMR-01'de kabul edilen mimari, bu çizim ile aşağıdaki danışman düzeltme notlarının birlikte okunmasıdır; bu notların Arda tarafından yeniden çizildiği iddia edilmez:
+
+- ROS 2 PC, harici laptoptur; kendi bataryası/adaptörüyle beslenir. Robot güç kaynağı PC'yi beslemez.
+- PC-STM32 veri hattında robot tarafı kablosuz arayüz yer tutucusu vardır. Haritalama sensörü robotta, tarama işlemesi laptopta; veri aktarma yolu AMR-12/18'de seçilir.
+- STM32-sürücü kontrolü; sürücü-motor enerji aktarımı; motor-enkoder mekanik dönüş; enkoder-STM32 ölçüm akışı ayrı adlandırılır. Seçilen aktif enkoderin beslemesi veri sayfasıyla planlanır.
+- Görev/rota ve güncel hız üretimi ROS 2'de; periyodik tekerlek kontrolü, ölçüm ve yerel timeout/duruş STM32'dedir. Bu görevlerin uygulama kabulü sonraki görevlerdedir.
+
+Komut/geri besleme/enerji rollerinin başlangıç kapsamı, kullanıcı çizimleri ve açıklamaları üzerinden danışman incelemesiyle kabul edildi. Bu değerlendirme bağımsız bir sınav, fiziksel ölçüm veya hatasız firmware iddiası değildir.
+
+Normal hız rampaları kaynak planda AMR-16'da uygulanacak; otonom komutlarda ROS tarafı hız/ivme sınırları da kullanılacak. Komut kaybı/yakın engelde normal konfor rampasına bağlı kalınmadan ayrıca tanımlı duruş profili motor/sürücü sınırları içinde uygulanacak. İki katmandaki hız sınırlarının ek gecikmesi ölçülecek; sayısal rampa ve frenleme modu henüz seçilmedi.
 
 ![Arda'nın ilk blok şeması](../evidence/AMR-01/blok-semasi-v01.png)
 
