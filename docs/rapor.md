@@ -24,7 +24,10 @@ Yöntem: ihtiyacı tanımlama, tasarım/hesap, Arda'nın uygulaması, beklenen-g
 
 ## 3. İlgili çalışmalar ve teknik kaynaklar
 
-Başlangıç kaynağı: ../amr-rapor.pdf, 12 Ekim 2026, 19 sayfa. Yol haritası ve görevler incelendi. Teknik kaynaklar ilgili uygulama görevinde okunup sürüm ve erişim tarihiyle kaydedilecek. Başlangıç PDF'sinde listelenen web kaynakları bu oturumda ayrıca doğrulanmadı.
+Başlangıç kaynağı: ../amr-rapor.pdf, 12 Ekim 2026, 19 sayfa. Yol haritası ve görevler incelendi. Teknik kaynaklar ilgili uygulama görevinde okunup sürüm ve erişim tarihiyle kaydedilecek. Başlangıç PDF'sindeki web kaynaklarının tamamı ayrıca doğrulanmadı; ilk blok şeması incelemesinde aşağıdaki iki resmî kaynak okundu.
+
+- [Nav2 Jazzy - Mapping and Localization](https://docs.nav2.org/jazzy/configuration_and_development/first_time_robot_setup_guide/sensors/mapping_localization/), erişim 12 Ekim 2026: LaserScan tabanlı haritalama/konumlanma ve yardımcı range verisinin ayrımı.
+- [SLAM Toolbox resmî deposu](https://github.com/SteveMacenski/slam_toolbox), erişim 12 Ekim 2026: LaserScan girişi. Bu kontrol kurulu ROS sürümünün doğrulandığı anlamına gelmez.
 
 Kaynak kayıt biçimi: başlık, üretici/yazar, sürüm, URL, erişim tarihi, projede desteklediği karar. Literatür değerlendirmesi henüz yapılmadı.
 
@@ -32,7 +35,7 @@ Kaynak kayıt biçimi: başlık, üretici/yazar, sürüm, URL, erişim tarihi, p
 
 Üst düzey rol ayrımı: STM32 PWM, enkoder okuma, sabit periyotlu hız kontrolü ve komut zaman aşımını; ROS 2 bilgisayarı odometri, TF, SLAM, konumlanma, navigasyon ve görev yönetimini üstlenecek. Motor sürücü, kontrol sinyalini motor gücüne aktaracak. Ayrıntılı arayüz henüz tasarlanmadı.
 
-Arda'nın blok şeması ve üç akış açıklaması: **bekleniyor**.
+Arda'nın ilk [blok şeması ve incelemesi](sistem-mimarisi-inceleme.md) kaydedildi. Gamepad/ROS 2 PC/STM32 yolu, iki sürücü-motor-enkoder grubu ve dört mesafe sensörü aday mimari olarak gösterildi. Komut oklarının yönü, sürücü-motor enerji yolu ve güç dağıtımı düzeltilmeli; veri/enerji etiketleri ile kişisel açıklama henüz bekleniyor. Dört köşe sensörü, başlangıç planının haritalama sensörü yerine kabul edilmedi.
 
 ### Karar kaydı
 
@@ -47,6 +50,7 @@ Arda'nın blok şeması ve üç akış açıklaması: **bekleniyor**.
 | 2026-10-12 | Telefon veya kumandadan tek kontrol arayüzü V0 için yeterli | Arda'nın asgari prototip tanımı | Arayüz seçimi açık |
 | 2026-10-12 | İlk varsayımsal alan 2 × 2 m; robot 40 × 40 cm; iki rota fikri | Arda'nın CAD çizimi ve açıklaması | Tasarım varsayımı; geçilebilirlik doğrulanmadı |
 | 2026-10-12 | V02'de istasyon/engel etiketleri; 250 mm merkez-yüzey açıklıkları | Arda'nın revize CAD çizimi | Düz duruşta nominal gövde açıklığı 50 mm; dönüş doğrulaması sonraki görevlerde |
+| 2026-10-12 | Gamepad/ROS 2 PC/STM32 yolu ve dört köşe sensörü aday mimari | Arda'nın ilk sistem blok şeması | Akış revizyonu ve sensör işlevlerinin ayrımı bekleniyor; parça seçimi değil |
 
 Sayısal hedeflerin gerekçeleri: **Arda yazacak**.
 
@@ -81,7 +85,7 @@ Henüz proje sonucu yoktur. Bu bölüm ancak ölçülmüş sonuçlar ve gereksin
 
 ## 9. Kişisel katkı ve öğrenme
 
-Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk haritalama yöntemini açıkladı; altı maddelik senaryosunda kişisel gelişim/yarışma altyapısı amacını, modüler robot vizyonunu ve manuel ilk prototip beklentisini belirledi. 2 × 2 m alan ve 40 × 40 cm robot varsayımıyla iki alternatif rota içeren ilk CAD çizimini oluşturdu. Sistem blok şeması, sayısal performans gereksinimleri ve robot uygulaması henüz sunulmadı.
+Arda: kullanım hedefini, başlangıç deneyimini/donanım durumunu ve ilk haritalama yöntemini açıkladı; altı maddelik senaryosunda kişisel gelişim/yarışma altyapısı amacını, modüler robot vizyonunu ve manuel ilk prototip beklentisini belirledi. 2 × 2 m alan ve 40 × 40 cm robot varsayımıyla iki alternatif rota içeren ilk CAD çizimini oluşturdu. İlk sistem blok şemasını da çizdi; bu şemanın revizyonu ve kişisel akış açıklamaları, sayısal performans gereksinimleri ve robot uygulaması henüz bekleniyor.
 
 Arda ayrıca V02 çiziminde BASE / ROBOT, TARGET ROBOT ve ENGEL etiketleri ile yol merkezi açıklıklarını ekledi. Bu çizim alan tanımı kanıtıdır. Dönüşlerde kare gövdenin kapladığı alanın kontrolü ve rotaların uygulanması henüz yapılmadı.
 
